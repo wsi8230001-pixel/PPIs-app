@@ -1,22 +1,580 @@
-<!doctype html><html data-build-id="a3e50950c7" data-git-hash="a3e50950c7e8af832556f16fa295c445fff0f874" data-build-timestamp="1781043074" data-version="1.0.0" data-env="" data-color-version="v2" lang="en" data-theme="claude" data-mode="light" class="h-screen antialiased scroll-smooth"><head data-ion-ip-country="TW"><link rel="preconnect" href="https://assets-proxy.anthropic.com" crossorigin><link rel="dns-prefetch" href="https://assets-proxy.anthropic.com"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title data-react-fallback>Claude</title><meta data-react-fallback name="description" content="Claude is Anthropic's AI, built for problem solvers. Tackle complex challenges, analyze data, write code, and think through your hardest work."><meta name="apple-itunes-app" content="app-id=6473753684"><meta property="og:type" content="website"><meta property="og:site_name" content="Claude"><meta property="og:image" content="https://claude.ai/images/claude_ogimage.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><link rel="icon" type="image/svg+xml" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cd02a42d9-Vq_H3mgS.svg"><link rel="icon" type="image/png" sizes="32x32" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ce67964e7-CAX1bqSh.png"><link rel="icon" type="image/png" sizes="16x16" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c03e51811-DebilQLI.png"><link rel="shortcut icon" href="/favicon.ico"><link rel="apple-touch-icon" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c129d018a-jJjJELY8.png"><link rel="apple-touch-startup-image" href="/images/claude_app_icon.png"><link rel="manifest" href="/manifest.json"><meta name="mobile-web-app-capable" content="yes"><link rel="preload" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cc27851ad-CFxw3nG7.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c66fc489e-C-BHYa_K.woff2" as="font" type="font/woff2" crossorigin><script nonce="Px4+wfvvistLfZrYYdgcdw==">void 0===globalThis.process&&(globalThis.process={env:{},cwd:function(){return"/"}}),void 0===globalThis.global&&(globalThis.global=globalThis)</script><script type="application/ld+json" nonce="Px4+wfvvistLfZrYYdgcdw==">{
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "name": "Claude",
-            "alternateName": ["Claude.ai", "Claude by Anthropic"],
-            "url": "https://claude.com"
-          },
-          {
-            "@type": "Organization",
-            "name": "Anthropic",
-            "url": "https://www.anthropic.com",
-            "logo": "https://claude.ai/images/claude_ogimage.png",
-            "sameAs": [
-              "https://x.com/AnthropicAI",
-              "https://www.linkedin.com/company/anthropic",
-              "https://www.youtube.com/@anthropic-ai"
-            ]
-          }
-        ]
-      }</script><script nonce="Px4+wfvvistLfZrYYdgcdw==">!function(){try{performance.mark?.("rq_cache:preload_start");const e="keyval-store",o="keyval",r="react-query-cache",t=new Promise(t=>{if(!window.indexedDB)return void t(void 0);const c=indexedDB.open(e);c.onupgradeneeded=()=>{c.transaction?.abort()},c.onerror=()=>t(void 0),c.onsuccess=()=>{const a=c.result;if(!a.objectStoreNames.contains(o))return a.close(),indexedDB.deleteDatabase(e),void t(void 0);try{const e=a.transaction(o,"readonly").objectStore(o).get(r);e.onerror=()=>{a.close(),t(void 0)},e.onsuccess=()=>{a.close(),window.__PRELOADED_IDB_CACHE_RESULT__=e.result,t(e.result)}}catch{a.close(),t(void 0)}}});window.__PRELOADED_IDB_CACHE__=t,performance.measure?.("rq_cache:preload_exec",{start:"rq_cache:preload_start"})}catch{}}()</script><link rel="preconnect" href="https://js.stripe.com"><link rel="preconnect" href="https://m.stripe.network"><script type="module" crossorigin src="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/index-TGpjqf_A.js" nonce="Px4+wfvvistLfZrYYdgcdw=="></script><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-react-BXtq6092.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-infra-DayZK7Ds.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-zod-CA61GWdI.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-router-DBJJjqTg.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-intl-BfzKwkDC.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-zustand-aNCqKbN2.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-icons-Hv5_h_PC.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-lodash-C93qo-iy.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-growthbook-B5h1HGMr.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-motion-DK7VnjwZ.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-radix-DwhyWg2_.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-query-C9-z1Qbx.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c572d571a-BWu91ZQV.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-luxon-Y8l99kBI.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-ant-icons-CySutquz.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ccf760184-DUfYQFkq.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c6a992d55-Dp0kFqWS.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c29fd810e-40pWqLlw.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c5669b8e4-DflLzW9l.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cc8728789-BdUUbGd4.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c85adc124-CwPhhm9f.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cf9dddd95-0kBR4Znd.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c9e81e7b9-GWBPAQqb.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cbcae692c-CLfAf09M.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c0af56d39-DgGpkP9q.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ca3b5b2cd-Cc99hzQw.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c4bf44b41-DFgSf2WG.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cf8dbbbdb-DcpYTlIK.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ce1bfd762-DUa12zoF.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c74b56586-A6jr2Bf5.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c42011864-DRdlqgKk.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c6a992d55-BuoI_mhL.js"><link rel="stylesheet" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c572d571a-zcsfkNBh.css"><link rel="stylesheet" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cf8dbbbdb-o73uZ2YJ.css"><link rel="stylesheet" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c6a992d55-CGk1xqXq.css"></head><body class="bg-bg-100 text-text-100 font-ui min-h-screen"><div id="root"></div><script nonce="Px4+wfvvistLfZrYYdgcdw==">(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.nonce='Px4+wfvvistLfZrYYdgcdw==';d.innerHTML="window.__CF$cv$params={r:'a0972b5b9a8be2fe',t:'MTc4MTA4MTg1NQ=='};var a=document.createElement('script');a.nonce='Px4+wfvvistLfZrYYdgcdw==';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>WellMove</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#FAF7F5;--bg2:#F2EBE6;--card:#FFFFFF;--border:#E8DDD8;--border2:#D4C8C0;--primary:#B08A9E;--primary-dark:#8A6878;--primary-light:#E8D4E0;--accent:#E8A598;--sage:#8BA89E;--dark:#3D3347;--text:#2C2030;--text2:#6B5B72;--text3:#A0909A;--success:#4CAF78;--warning:#E8A040;--radius:14px;--radius-sm:10px;--radius-xs:8px}
+html,body{height:100%;background:#E8E0EC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;color:var(--text)}
+.phone-wrap{display:flex;justify-content:center;padding:20px 0 40px;min-height:100vh}
+.phone{width:390px;min-height:844px;background:var(--bg);border-radius:44px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.25);display:flex;flex-direction:column}
+.status-bar{background:var(--dark);padding:12px 24px 8px;display:flex;justify-content:space-between;flex-shrink:0}
+.status-bar span{color:#fff;font-size:12px;font-weight:600}
+.screen{flex:1;overflow-y:auto;display:none;flex-direction:column}
+.screen.active{display:flex}
+.screen-body{padding:16px;display:flex;flex-direction:column;gap:12px;padding-bottom:90px}
+.nav{display:flex;background:#fff;border-top:0.5px solid var(--border);flex-shrink:0}
+.nav-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:10px 4px 12px;gap:3px;border:none;background:none;color:var(--text3);font-size:9.5px;cursor:pointer}
+.nav-item i{font-size:21px}
+.nav-item.active{color:var(--primary)}
+.app-header{background:var(--dark);padding:8px 20px 16px;flex-shrink:0}
+.ah-top{display:flex;justify-content:space-between;align-items:center}
+.ah-name{font-size:20px;font-weight:600;color:#fff}
+.ah-sub{font-size:12px;color:#C9A8BE;margin-top:1px}
+.card{background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius);padding:14px}
+.card-title{font-size:13px;font-weight:600;color:var(--text2);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.card-title i{font-size:15px;color:var(--primary)}
+.hero{background:var(--dark);padding:32px 24px 24px;display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.hero-logo{width:80px;height:80px;background:var(--primary);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:14px}
+.hero-logo-w{font-size:34px;font-weight:700;color:#fff;line-height:1}
+.hero-logo-sub{font-size:10px;color:#E8D4E0;letter-spacing:.14em;margin-top:1px}
+.hero-title{font-size:28px;font-weight:700;color:#fff;margin-bottom:4px}
+.hero-en{font-size:11px;color:#C9A8BE;letter-spacing:.1em;margin-bottom:10px}
+.hero-desc{font-size:12px;color:#A898B8;text-align:center;line-height:1.8;max-width:280px}
+.mascot-strip{background:#2A2238;padding:14px 16px 12px;flex-shrink:0}
+.mascot-label{font-size:10px;color:#8878A0;text-align:center;margin-bottom:10px}
+.mascot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mascot-cell{display:flex;flex-direction:column;align-items:center;gap:5px}
+.mascot-img{width:82px;height:82px;border-radius:14px;overflow:hidden;border:1.5px solid #4A3A58;background:#3A2E48}
+.mascot-img img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.mascot-name{font-size:11px;color:#C9A8BE;font-weight:600}
+.mascot-role{font-size:9px;color:#7868A0;text-align:center;line-height:1.4}
+.btn{width:100%;padding:13px;border-radius:var(--radius-sm);border:0.5px solid var(--border2);background:var(--card);color:var(--text);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:inherit}
+.btn i{font-size:16px;color:var(--primary)}
+.btn-primary{background:var(--primary);color:#fff;border-color:var(--primary);justify-content:center;font-weight:600;font-size:15px;padding:15px}
+.btn-primary i{color:#fff}
+.btn-secondary{background:transparent;color:var(--text3);border-color:var(--border);justify-content:center;font-size:13px}
+.fgrp{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
+.flbl{font-size:12px;font-weight:600;color:var(--text2)}
+.req{color:#C0404A;font-size:10px;margin-left:3px}
+input[type=text],input[type=number],select,textarea{width:100%;padding:10px 12px;border:0.5px solid var(--border2);border-radius:var(--radius-xs);font-size:13px;font-family:inherit;background:#fff;color:var(--text);outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--primary)}
+textarea{resize:none}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.radio-group{display:flex;flex-direction:column;gap:6px}
+.radio-opt{display:flex;align-items:center;gap:9px;padding:10px 12px;border:0.5px solid var(--border);border-radius:var(--radius-xs);cursor:pointer;font-size:13px;color:var(--text);user-select:none}
+.radio-opt.sel{border-color:var(--primary);background:#F7F0EC;color:var(--primary-dark)}
+.radio-opt input{accent-color:var(--primary);width:15px;height:15px;flex-shrink:0}
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.check-opt{display:flex;align-items:center;gap:7px;padding:9px 10px;border:0.5px solid var(--border);border-radius:var(--radius-xs);cursor:pointer;font-size:12px;color:var(--text);user-select:none}
+.check-opt.sel{border-color:var(--primary);background:#F7F0EC;color:var(--primary-dark)}
+.check-opt input{accent-color:var(--primary);width:14px;height:14px;flex-shrink:0}
+.step-dots{display:flex;gap:6px;justify-content:center;padding:4px 0}
+.sdot{width:8px;height:8px;border-radius:50%;background:var(--bg2);border:0.5px solid var(--border2)}
+.sdot.active{background:var(--primary);border-color:var(--primary)}
+.sdot.done{background:#E1F5EE;border-color:var(--sage)}
+.bmi-box{padding:10px 12px;background:var(--bg2);border-radius:var(--radius-xs);display:flex;justify-content:space-between;align-items:center;margin-top:4px}
+.bmi-val{font-size:18px;font-weight:700;color:var(--primary)}
+.bmi-cat{font-size:11px;color:var(--text3);text-align:right}
+.slabel{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;padding:0 2px}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.scard{background:var(--bg2);border-radius:var(--radius-xs);padding:11px 12px;text-align:center}
+.snum{font-size:24px;font-weight:700;color:var(--primary)}
+.slb{font-size:11px;color:var(--text3);margin-top:2px}
+.streak{display:flex;align-items:center;gap:10px;padding:11px 14px;background:var(--bg2);border-radius:var(--radius-sm)}
+.streak-num{font-size:26px;font-weight:700;color:var(--primary)}
+.streak-info{flex:1}
+.streak-title{font-size:13px;font-weight:600;color:var(--text)}
+.streak-sub{font-size:11px;color:var(--text3);margin-top:1px}
+.week-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.wday{aspect-ratio:1;border-radius:var(--radius-xs);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;border:0.5px solid var(--border);background:var(--bg2);color:var(--text3);gap:2px}
+.wday span{font-size:17px}
+.wday.done{background:#EEEDFE;border-color:#AFA9EC;color:#3C3489}
+.wday.today{background:var(--primary);border-color:var(--primary);color:#fff}
+.irow{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:0.5px solid var(--border)}
+.irow:last-child{border-bottom:none;padding-bottom:0}
+.iico{width:34px;height:34px;border-radius:var(--radius-xs);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.iico.pu{background:#EEEDFE;color:#534AB7}
+.iico.te{background:#E1F5EE;color:#0F6E56}
+.iico.co{background:#FAECE7;color:#993C1D}
+.itx{flex:1}
+.ititle{font-size:13px;font-weight:600;color:var(--text)}
+.isub{font-size:11px;color:var(--text3);margin-top:2px}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.bp{background:#EEEDFE;color:#3C3489}
+.bt{background:#E1F5EE;color:#085041}
+.prow{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.plbl{font-size:11px;color:var(--text3);width:68px;flex-shrink:0}
+.pbg{flex:1;height:6px;background:var(--bg2);border-radius:3px;overflow:hidden}
+.pfill{height:100%;border-radius:3px;background:var(--primary)}
+.pnum{font-size:11px;color:var(--text3);width:32px;text-align:right}
+.ai-box{background:#F7F0EC;border:0.5px solid #D4B8C8;border-radius:var(--radius);padding:13px 14px;margin-top:10px}
+.ai-label{font-size:11px;font-weight:600;color:#72243E;margin-bottom:7px;display:flex;align-items:center;gap:5px}
+.ai-text{font-size:13px;color:var(--dark);line-height:1.7}
+.ai-loading{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--text3)}
+.dots{display:flex;gap:3px}
+.dots span{width:5px;height:5px;background:var(--primary);border-radius:50%;animation:blink 1.2s infinite}
+.dots span:nth-child(2){animation-delay:.2s}
+.dots span:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.2}40%{opacity:1}}
+.upload-zone{border:1.5px dashed var(--border2);border-radius:var(--radius);padding:22px 14px;text-align:center;cursor:pointer}
+.upload-zone i{font-size:30px;color:var(--primary);display:block;margin-bottom:7px}
+.uz-title{font-size:13px;font-weight:600;color:var(--text)}
+.uz-sub{font-size:11px;color:var(--text3);margin-top:3px}
+.steps-header{background:var(--primary);padding:10px 14px;border-radius:var(--radius-sm) var(--radius-sm) 0 0;color:#fff;font-size:13px;font-weight:600}
+.steps-data{border:0.5px solid var(--border);border-top:none;border-radius:0 0 var(--radius-sm) var(--radius-sm);padding:12px 14px}
+.steps-row{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:0.5px solid var(--border);font-size:12px}
+.steps-row:last-child{border-bottom:none}
+.steps-day{color:var(--text3);width:24px;flex-shrink:0}
+.steps-bar-bg{flex:1;height:5px;background:var(--bg2);border-radius:3px;overflow:hidden}
+.steps-bar-fill{height:100%;border-radius:3px;background:var(--primary)}
+.steps-count{font-weight:600;color:var(--text);width:48px;text-align:right;font-size:11px}
+.steps-ok{width:14px;color:var(--success);font-size:11px}
+.met-summary{margin-top:10px;padding:10px 12px;background:var(--bg2);border-radius:var(--radius-xs)}
+.scale-q{margin-bottom:14px}
+.sq-label{font-size:12px;font-weight:600;color:var(--text);margin-bottom:7px}
+.scale-opts{display:flex;gap:4px}
+.sopt{flex:1;height:38px;border-radius:var(--radius-xs);border:0.5px solid var(--border);background:var(--bg2);font-size:13px;font-weight:600;cursor:pointer;color:var(--text3);font-family:inherit}
+.sopt.sel{background:var(--primary);border-color:var(--primary);color:#fff}
+.scale-ends{display:flex;justify-content:space-between;margin-top:4px}
+.scale-ends span{font-size:10px;color:var(--text3)}
+.rtabs{display:flex;gap:6px;margin-bottom:10px}
+.rtab{padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600;border:0.5px solid var(--border2);cursor:pointer;background:var(--card);color:var(--text3);font-family:inherit}
+.rtab.active{background:var(--primary);border-color:var(--primary);color:#fff}
+.ptab-content{display:none}
+.ptab-content.active{display:block}
+.p-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:0.5px solid var(--border)}
+.p-row:last-child{border-bottom:none}
+.avatar{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.av-a{background:#EEEDFE;color:#3C3489}
+.av-b{background:#E1F5EE;color:#085041}
+.av-c{background:#FAECE7;color:#712B13}
+.p-name{font-size:13px;font-weight:600;color:var(--text)}
+.p-sub{font-size:11px;color:var(--text3)}
+.compliance{margin-left:auto;font-size:12px;font-weight:700}
+.c-hi{color:var(--success)}.c-mid{color:var(--warning)}.c-lo{color:#C04040}
+#toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:var(--dark);color:#fff;padding:9px 20px;border-radius:20px;font-size:12px;font-weight:600;opacity:0;transition:opacity .3s;white-space:nowrap;pointer-events:none;z-index:999}
+.info-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.info-card{background:var(--bg2);border-radius:var(--radius-xs);padding:9px 6px;text-align:center}
+.ic-num{font-size:17px;font-weight:700;color:var(--primary)}
+.ic-lbl{font-size:9px;color:var(--text3);margin-top:2px}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.feat{background:var(--bg2);border-radius:var(--radius-sm);padding:12px;display:flex;align-items:flex-start;gap:9px}
+.fi{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+.ft{font-size:12px;font-weight:600;color:var(--text)}
+.fs{font-size:10px;color:var(--text3);margin-top:2px;line-height:1.4}
+.footer-note{text-align:center;font-size:10px;color:var(--text3);line-height:1.7;padding-top:4px}
+.section-divider{font-size:10px;font-weight:700;color:var(--primary);padding:4px 0 2px;border-bottom:0.5px solid var(--primary-light);margin-bottom:6px}
+.week-summary{background:#EEEDFE;border-radius:var(--radius);padding:13px 14px;border:0.5px solid #AFA9EC}
+.ws-title{font-size:12px;font-weight:700;color:#3C3489;margin-bottom:7px;display:flex;align-items:center;gap:5px}
+.ws-quote{font-size:12px;color:#534AB7;font-style:italic;line-height:1.6;border-left:2px solid #7F77DD;padding-left:10px}
+</style>
+</head>
+<body>
+<div class="phone-wrap">
+<div class="phone">
+<div class="status-bar"><span>9:41</span><span>WellMove</span><span>WiFi</span></div>
+
+<div class="screen active" id="screen-welcome" style="overflow-y:auto">
+  <div class="hero">
+    <div class="hero-logo"><div class="hero-logo-w">W</div><div class="hero-logo-sub">WELLMOVE</div></div>
+    <div class="hero-title">WellMove</div>
+    <div class="hero-en">WELL-BEING × MOVEMENT</div>
+    <div class="hero-desc">結合有氧運動與正向心理課程<br>陪你在四週內提升身體活動量與主觀幸福感</div>
+  </div>
+  <div class="mascot-strip">
+    <div class="mascot-label">校園三寶陪你一起</div>
+    <div class="mascot-grid">
+      <div class="mascot-cell">
+        <div class="mascot-img"><img src="squerall.jpg" alt="松鼠" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:36px\'>🐿️</div>'"></div>
+        <div class="mascot-name">灰灰</div><div class="mascot-role">日誌嚮導<br>AI回饋</div>
+      </div>
+      <div class="mascot-cell">
+        <div class="mascot-img"><img src="blackdog.jpg" alt="黑狗" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:36px\'>🐕</div>'"></div>
+        <div class="mascot-name">墨墨</div><div class="mascot-role">運動隊長<br>打卡鼓勵</div>
+      </div>
+      <div class="mascot-cell">
+        <div class="mascot-img"><img src="heron.jpg" alt="黑冠麻鷺" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:36px\'>🐦</div>'"></div>
+        <div class="mascot-name">麻麻</div><div class="mascot-role">量表提醒<br>進度觀察</div>
+      </div>
+    </div>
+  </div>
+  <div style="padding:20px 20px 28px;display:flex;flex-direction:column;gap:14px">
+    <div class="feat-grid">
+      <div class="feat"><div class="fi" style="background:#EEEDFE"><i class="ti ti-pencil" style="color:#534AB7"></i></div><div><div class="ft">正向日誌</div><div class="fs">三件好事+AI回饋</div></div></div>
+      <div class="feat"><div class="fi" style="background:#E1F5EE"><i class="ti ti-shoe" style="color:#0F6E56"></i></div><div><div class="ft">步數上傳</div><div class="fs">截圖客觀驗證</div></div></div>
+      <div class="feat"><div class="fi" style="background:#FAECE7"><i class="ti ti-clipboard-list" style="color:#993C1D"></i></div><div><div class="ft">量表填寫</div><div class="fs">CHI+IPAQ</div></div></div>
+      <div class="feat"><div class="fi" style="background:#F7F0EC"><i class="ti ti-chart-line" style="color:#72243E"></i></div><div><div class="ft">進度追蹤</div><div class="fs">出席與依從率</div></div></div>
+    </div>
+    <div class="info-row">
+      <div class="info-card"><div class="ic-num">4</div><div class="ic-lbl">週課程</div></div>
+      <div class="info-card"><div class="ic-num">8</div><div class="ic-lbl">堂課</div></div>
+      <div class="info-card"><div class="ic-num">60'</div><div class="ic-lbl">每次</div></div>
+      <div class="info-card"><div class="ic-num">60</div><div class="ic-lbl">招募人數</div></div>
+    </div>
+    <button class="btn btn-primary" onclick="goScreen('profile')">開始填寫基本資料</button>
+    <button class="btn btn-secondary" onclick="goScreen('home')">已有帳號，登入繼續</button>
+    <div class="footer-note">本研究已通過倫理審查，所有資料匿名保存<br>指導教授：李思賢　研究生：劉伊茜</div>
+  </div>
+</div>
+<div class="screen" id="screen-profile">
+  <div class="app-header"><div class="ah-top"><div class="ah-name">基本資料問卷</div></div><div class="ah-sub">請依實際情況填寫，所有資料僅供研究使用</div></div>
+  <div class="screen-body">
+    <div class="step-dots"><div class="sdot active" id="dot0"></div><div class="sdot" id="dot1"></div><div class="sdot" id="dot2"></div><div class="sdot" id="dot3"></div></div>
+    <div id="step-0"><div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><div style="font-size:14px;font-weight:700;color:var(--text)">個人基本資料</div><div style="font-size:11px;color:var(--text3)">1/4</div></div>
+      <div class="section-divider">就讀資訊</div>
+      <div class="fgrp"><div class="flbl">就讀學校</div><input type="text" value="輔仁大學" readonly style="background:var(--bg2);color:var(--text3)"></div>
+      <div class="fgrp"><div class="flbl">就讀系所 <span class="req">*</span></div><input type="text" id="dept" placeholder="請填寫系所名稱"></div>
+      <div class="row2">
+        <div class="fgrp"><div class="flbl">年齡 <span class="req">*</span></div><input type="number" id="age" placeholder="歲" min="18" max="40"></div>
+        <div class="fgrp"><div class="flbl">年級 <span class="req">*</span></div><select id="grade"><option value="">請選擇</option><option>大一</option><option>大二</option><option>大三</option><option>大四</option><option>研究生</option></select></div>
+      </div>
+      <div class="fgrp"><div class="flbl">性別 <span class="req">*</span></div>
+        <div class="radio-group" id="gender-group">
+          <label class="radio-opt" onclick="pickRadio('gender-group',this)"><input type="radio" name="gender" value="男">男</label>
+          <label class="radio-opt" onclick="pickRadio('gender-group',this)"><input type="radio" name="gender" value="女">女</label>
+          <label class="radio-opt" onclick="pickRadio('gender-group',this)"><input type="radio" name="gender" value="other">其他／不願透露</label>
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="nextStep(0)" style="margin-top:6px">下一步</button>
+    </div></div>
+    <div id="step-1" style="display:none"><div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><div style="font-size:14px;font-weight:700">身體測量資料</div><div style="font-size:11px;color:var(--text3)">2/4</div></div>
+      <div class="row3">
+        <div class="fgrp"><div class="flbl">身高 <span class="req">*</span></div><input type="number" id="height" placeholder="公分" oninput="calcBMI()"></div>
+        <div class="fgrp"><div class="flbl">體重 <span class="req">*</span></div><input type="number" id="weight" placeholder="公斤" oninput="calcBMI()"></div>
+        <div class="fgrp"><div class="flbl">腰圍</div><input type="number" id="waist" placeholder="公分"></div>
+      </div>
+      <div class="bmi-box"><div><div style="font-size:11px;color:var(--text3)">BMI（自動計算）</div><div class="bmi-val" id="bmi-val">—</div></div><div class="bmi-cat" id="bmi-cat">填入身高體重後顯示</div></div>
+      <div style="display:flex;gap:8px;margin-top:12px"><button class="btn" onclick="prevStep(1)" style="flex:1;justify-content:center;color:var(--text3)">上一步</button><button class="btn btn-primary" onclick="nextStep(1)" style="flex:2">下一步</button></div>
+    </div></div>
+    <div id="step-2" style="display:none"><div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><div style="font-size:14px;font-weight:700">過去運動習慣</div><div style="font-size:11px;color:var(--text3)">3/4</div></div>
+      <div class="fgrp"><div class="flbl">每週規律運動頻率 <span class="req">*</span></div>
+        <div class="radio-group" id="freq-group">
+          <label class="radio-opt" onclick="pickRadio('freq-group',this)"><input type="radio" name="freq">幾乎不運動</label>
+          <label class="radio-opt" onclick="pickRadio('freq-group',this)"><input type="radio" name="freq">每週1次</label>
+          <label class="radio-opt" onclick="pickRadio('freq-group',this)"><input type="radio" name="freq">每週2次</label>
+          <label class="radio-opt" onclick="pickRadio('freq-group',this)"><input type="radio" name="freq">每週3次</label>
+          <label class="radio-opt" onclick="pickRadio('freq-group',this)"><input type="radio" name="freq">每週4次以上</label>
+        </div>
+      </div>
+      <div class="fgrp" style="margin-top:4px"><div class="flbl">每次運動持續時間 <span class="req">*</span></div>
+        <div class="radio-group" id="dur-group">
+          <label class="radio-opt" onclick="pickRadio('dur-group',this)"><input type="radio" name="dur">20分鐘以下</label>
+          <label class="radio-opt" onclick="pickRadio('dur-group',this)"><input type="radio" name="dur">20至30分鐘</label>
+          <label class="radio-opt" onclick="pickRadio('dur-group',this)"><input type="radio" name="dur">30至60分鐘</label>
+          <label class="radio-opt" onclick="pickRadio('dur-group',this)"><input type="radio" name="dur">60分鐘以上</label>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:12px"><button class="btn" onclick="prevStep(2)" style="flex:1;justify-content:center;color:var(--text3)">上一步</button><button class="btn btn-primary" onclick="nextStep(2)" style="flex:2">下一步</button></div>
+    </div></div>
+    <div id="step-3" style="display:none"><div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><div style="font-size:14px;font-weight:700">運動類型與經驗</div><div style="font-size:11px;color:var(--text3)">4/4</div></div>
+      <div class="fgrp"><div class="flbl">最常從事的運動類型（可複選，最多3項）</div>
+        <div class="check-grid" id="sport-group" style="margin-top:6px">
+          <label class="check-opt" onclick="pickCheck(this,'sport-group',3)"><input type="checkbox">慢跑／快走</label>
+          <label class="check-opt" onclick="pickCheck(this,'sport-group',3)"><input type="checkbox">球類運動</label>
+          <label class="check-opt" onclick="pickCheck(this,'sport-group',3)"><input type="checkbox">游泳</label>
+          <label class="check-opt" onclick="pickCheck(this,'sport-group',3)"><input type="checkbox">有氧舞蹈</label>
+          <label class="check-opt" onclick="pickCheck(this,'sport-group',3)"><input type="checkbox">重量訓練</label>
+          <label class="check-opt" onclick="pickCheck(this,'sport-group',3)"><input type="checkbox">騎腳踏車</label>
+          <label class="check-opt" onclick="pickCheck(this,'sport-group',3)"><input type="checkbox">瑜珈</label>
+          <label class="check-opt" onclick="pickCheck(this,'sport-group',3)"><input type="checkbox">其他</label>
+        </div>
+      </div>
+      <div class="fgrp"><div class="flbl">是否曾固定參與有氧運動課程？ <span class="req">*</span></div>
+        <div class="radio-group" id="prev-group" style="margin-top:6px">
+          <label class="radio-opt" onclick="pickRadio('prev-group',this);document.getElementById('prev-course').style.display='block'"><input type="radio" name="prev">是</label>
+          <label class="radio-opt" onclick="pickRadio('prev-group',this);document.getElementById('prev-course').style.display='none'"><input type="radio" name="prev">否</label>
+        </div>
+        <input type="text" id="prev-course" placeholder="課程名稱／形式" style="margin-top:6px;display:none">
+      </div>
+      <div style="display:flex;gap:8px;margin-top:12px"><button class="btn" onclick="prevStep(3)" style="flex:1;justify-content:center;color:var(--text3)">上一步</button><button class="btn btn-primary" onclick="submitProfile()" style="flex:2">送出問卷</button></div>
+    </div></div>
+  </div>
+</div>
+
+<div class="screen" id="screen-home">
+  <div class="app-header"><div class="ah-top"><div><div class="ah-name">今天好，<span id="user-name" style="color:#C9A8BE">同學</span></div><div class="ah-sub">第2週・第3堂課後</div></div><span class="badge bp">實驗組</span></div></div>
+  <div class="screen-body">
+    <div class="streak"><div class="streak-num">6</div><div class="streak-info"><div class="streak-title">連續書寫天數</div><div class="streak-sub">再寫1天達成7天里程碑！</div></div><i class="ti ti-flame" style="font-size:24px;color:#BA7517"></i></div>
+    <div class="card"><div class="card-title"><i class="ti ti-calendar-check"></i>本週出席</div>
+      <div class="week-row">
+        <div class="wday done"><span>✓</span><div>週一</div></div>
+        <div class="wday done"><span>✓</span><div>週三</div></div>
+        <div class="wday today"><span>今</span><div>週四</div></div>
+        <div class="wday"><span>—</span><div>週六</div></div>
+      </div>
+    </div>
+    <div class="card"><div class="card-title"><i class="ti ti-flame"></i>今日任務</div>
+      <div class="irow"><div class="iico pu"><i class="ti ti-writing"></i></div><div class="itx"><div class="ititle">三件好事書寫</div><div class="isub">完成後獲得AI正向回饋</div></div><span class="badge bp">待完成</span></div>
+      <div class="irow"><div class="iico te"><i class="ti ti-shoe"></i></div><div class="itx"><div class="ititle">上傳今日步數截圖</div><div class="isub">手機健康App截圖上傳</div></div><span class="badge bt">已完成</span></div>
+      <div class="irow"><div class="iico co"><i class="ti ti-clipboard-list"></i></div><div class="itx"><div class="ititle">IPAQ活動量（本週）</div><div class="isub">每週一次，約3分鐘</div></div><span class="badge bt">已完成</span></div>
+    </div>
+    <button class="btn btn-primary" onclick="goScreen('journal')"><i class="ti ti-pencil"></i>開始今日書寫</button>
+  </div>
+</div>
+<div class="screen" id="screen-journal">
+  <div class="app-header"><div class="ah-top"><div class="ah-name">正向日誌</div></div><div class="ah-sub">記錄今天的美好，灰灰陪你</div></div>
+  <div class="screen-body">
+    <div class="card"><div class="card-title"><i class="ti ti-stars"></i>三件好事</div>
+      <div style="font-size:12px;color:var(--text3);margin-bottom:12px">回想今天三件讓你感覺還不錯的事。</div>
+      <div class="fgrp"><div class="flbl">第1件</div><textarea rows="2" id="t1" placeholder="例：運動完身體很舒暢…"></textarea></div>
+      <div class="fgrp"><div class="flbl">第2件</div><textarea rows="2" id="t2" placeholder="例：和朋友聊天很開心…"></textarea></div>
+      <div class="fgrp"><div class="flbl">第3件</div><textarea rows="2" id="t3" placeholder="例：今天吃到好吃的東西…"></textarea></div>
+      <button class="btn btn-primary" id="save-btn" onclick="saveJournal()" style="margin-top:4px"><i class="ti ti-sparkles"></i>儲存並獲得AI回饋</button>
+      <div class="ai-box" id="ai-feedback" style="display:none">
+        <div class="ai-label"><i class="ti ti-robot" style="font-size:13px"></i>灰灰的AI回饋</div>
+        <div id="ai-loading" class="ai-loading"><span>正在生成回饋</span><div class="dots"><span></span><span></span><span></span></div></div>
+        <div id="ai-result" style="display:none" class="ai-text"></div>
+      </div>
+    </div>
+    <div class="card"><div class="card-title"><i class="ti ti-books"></i>本週正向回顧</div>
+      <div class="week-summary"><div class="ws-title"><i class="ti ti-sparkles" style="font-size:13px"></i>你這週累積了6件好事</div>
+        <div class="ws-quote">「完成了期中考」「和室友一起煮飯」「跑步時突然覺得很輕鬆」「老師說我報告不錯」「今天天氣很好」「有時間看想看的書」</div>
+      </div>
+      <div style="font-size:12px;color:var(--text3);margin-top:10px;line-height:1.6">每一件小事都在累積你的正向能量。Fredrickson的研究說，這些小小的好心情，會慢慢變成你面對壓力的資源。</div>
+    </div>
+  </div>
+</div>
+<div class="screen" id="screen-steps">
+  <div class="app-header"><div class="ah-top"><div class="ah-name">步數上傳</div></div><div class="ah-sub">截圖上傳，墨墨幫你記錄</div></div>
+  <div class="screen-body">
+    <div class="card"><div class="card-title"><i class="ti ti-device-mobile"></i>上傳手機步數截圖</div>
+      <div style="font-size:12px;color:var(--text3);margin-bottom:12px;line-height:1.6">請開啟手機「健康」App（iOS）或「Google Fit」（Android），截圖今日步數後上傳。</div>
+      <div class="upload-zone" id="upload-zone" onclick="simulateUpload()"><i class="ti ti-photo-up"></i><div class="uz-title">點此上傳截圖</div><div class="uz-sub">支援JPG/PNG・截圖只有你和研究者可見</div></div>
+      <div id="steps-preview" style="display:none;margin-top:10px">
+        <div class="steps-header"><i class="ti ti-check"></i> 本週步數紀錄</div>
+        <div class="steps-data"><div style="font-size:11px;color:var(--text3);margin-bottom:8px">與WHO建議（8,000步/天）比對</div><div id="steps-rows"></div>
+          <div class="met-summary"><div style="font-size:11px;color:var(--text3)">與IPAQ估算比對</div><div style="font-size:18px;font-weight:700;color:var(--primary)">差異±8%</div><div style="font-size:11px;color:var(--success)">✓ 兩種測量結果吻合</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card"><div class="card-title"><i class="ti ti-lock"></i>隱私說明</div><div style="font-size:12px;color:var(--text3);line-height:1.7">截圖僅供研究者核對步數數值，所有資料以匿名編碼處理，符合研究倫理規範。</div></div>
+  </div>
+</div>
+<div class="screen" id="screen-scale">
+  <div class="app-header"><div class="ah-top"><div class="ah-name">量表填寫</div></div><div class="ah-sub">麻麻提醒你認真作答</div></div>
+  <div class="screen-body">
+    <div class="card"><div class="card-title"><i class="ti ti-heart"></i>中文幸福量表（CHI）—前測</div>
+      <div style="font-size:11px;color:var(--text3);margin-bottom:14px;line-height:1.6">請依最近三個月狀況作答（0=最低，3=最高）。</div>
+      <div id="chi-questions"></div>
+      <button class="btn btn-primary" style="margin-top:12px" onclick="showToast('量表已送出，感謝填答！')">送出量表</button>
+    </div>
+    <div class="card"><div class="card-title"><i class="ti ti-run"></i>IPAQ-SF身體活動量</div>
+      <div style="font-size:11px;color:var(--text3);margin-bottom:10px">過去七天各類活動的頻率與時間：</div>
+      <div class="fgrp"><div class="flbl">高強度活動（跑步、跳繩等）</div><div style="display:flex;gap:8px;align-items:center;margin-top:4px"><input type="number" min="0" max="7" value="2" style="width:56px"> <span style="font-size:12px;color:var(--text3)">天，每天約</span><input type="number" min="0" value="30" style="width:56px"> <span style="font-size:12px;color:var(--text3)">分鐘</span></div></div>
+      <div class="fgrp"><div class="flbl">中等強度活動（快走、有氧舞蹈等）</div><div style="display:flex;gap:8px;align-items:center;margin-top:4px"><input type="number" min="0" max="7" value="3" style="width:56px"> <span style="font-size:12px;color:var(--text3)">天，每天約</span><input type="number" min="0" value="45" style="width:56px"> <span style="font-size:12px;color:var(--text3)">分鐘</span></div></div>
+      <div style="margin-top:10px;padding:10px 12px;background:var(--bg2);border-radius:var(--radius-xs)"><div style="font-size:11px;color:var(--text3)">預估每週活動量</div><div style="font-size:18px;font-weight:700;color:var(--primary)">1,081 MET-min/週</div><div style="font-size:11px;color:var(--success)">✓ 達WHO建議標準</div></div>
+    </div>
+  </div>
+</div>
+<div class="screen" id="screen-progress">
+  <div class="app-header"><div class="ah-top"><div class="ah-name">我的進度</div></div><div class="ah-sub">麻麻幫你觀測每一步</div></div>
+  <div class="screen-body">
+    <div class="sgrid">
+      <div class="scard"><div class="snum" style="color:#4CAF78">87%</div><div class="slb">課程依從率</div></div>
+      <div class="scard"><div class="snum">6</div><div class="slb">連續書寫天</div></div>
+      <div class="scard"><div class="snum">12</div><div class="slb">日誌總篇數</div></div>
+      <div class="scard"><div class="snum">7/8</div><div class="slb">課程出席</div></div>
+    </div>
+    <div class="card"><div class="card-title"><i class="ti ti-award"></i>完成進度</div>
+      <div class="prow"><div class="plbl">出席率</div><div class="pbg"><div class="pfill" style="width:87%"></div></div><div class="pnum">7/8</div></div>
+      <div class="prow"><div class="plbl">日誌</div><div class="pbg"><div class="pfill" style="width:75%"></div></div><div class="pnum">6/8</div></div>
+      <div class="prow"><div class="plbl">步數上傳</div><div class="pbg"><div class="pfill" style="width:85%"></div></div><div class="pnum">6/7</div></div>
+      <div class="prow" style="margin-bottom:0"><div class="plbl">量表</div><div class="pbg"><div class="pfill" style="width:50%"></div></div><div class="pnum">1/2</div></div>
+    </div>
+  </div>
+</div>
+<div class="screen" id="screen-admin">
+  <div class="app-header"><div class="ah-top"><div class="ah-name">研究者後台</div></div><div class="ah-sub">即時監控依從率與資料完整性</div></div>
+  <div class="screen-body">
+    <div class="sgrid">
+      <div class="scard"><div class="snum">28</div><div class="slb">有效樣本</div></div>
+      <div class="scard"><div class="snum" style="color:#4CAF78">91%</div><div class="slb">平均依從率</div></div>
+      <div class="scard"><div class="snum">14</div><div class="slb">實驗組</div></div>
+      <div class="scard"><div class="snum">14</div><div class="slb">對照組</div></div>
+    </div>
+    <div class="rtabs"><button class="rtab active" onclick="switchRTab(this,'rt-overview')">總覽</button><button class="rtab" onclick="switchRTab(this,'rt-participants')">參與者</button><button class="rtab" onclick="switchRTab(this,'rt-export')">匯出</button></div>
+    <div class="ptab-content active" id="rt-overview">
+      <div class="card"><div class="card-title"><i class="ti ti-chart-bar"></i>量表完成率</div>
+        <div class="prow"><div class="plbl">前測CHI</div><div class="pbg"><div class="pfill" style="width:100%"></div></div><div class="pnum">28/28</div></div>
+        <div class="prow"><div class="plbl">前測IPAQ</div><div class="pbg"><div class="pfill" style="width:100%"></div></div><div class="pnum">28/28</div></div>
+        <div class="prow" style="margin-bottom:0"><div class="plbl">後測CHI</div><div class="pbg"><div class="pfill" style="width:0%"></div></div><div class="pnum">0/28</div></div>
+      </div>
+    </div>
+    <div class="ptab-content" id="rt-participants">
+      <div class="card"><div class="card-title"><i class="ti ti-users"></i>參與者清單</div>
+        <div class="p-row"><div class="avatar av-a">A1</div><div><div class="p-name">實驗組 A1</div><div class="p-sub">出席7/8・日誌6/8</div></div><span class="compliance c-hi">87%</span></div>
+        <div class="p-row"><div class="avatar av-a">A2</div><div><div class="p-name">實驗組 A2</div><div class="p-sub">出席8/8・日誌8/8</div></div><span class="compliance c-hi">100%</span></div>
+        <div class="p-row"><div class="avatar av-b">B1</div><div><div class="p-name">對照組 B1</div><div class="p-sub">出席6/8・日誌—</div></div><span class="compliance c-mid">75%</span></div>
+        <div class="p-row"><div class="avatar av-c">B2</div><div><div class="p-name">對照組 B2</div><div class="p-sub">出席4/8・日誌—</div></div><span class="compliance c-lo">50%</span></div>
+      </div>
+    </div>
+    <div class="ptab-content" id="rt-export">
+      <div class="card"><div class="card-title"><i class="ti ti-download"></i>匯出資料</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <button class="btn" onclick="showToast('CHI資料已匯出')"><i class="ti ti-file-spreadsheet"></i>CHI幸福量表（.csv）</button>
+          <button class="btn" onclick="showToast('IPAQ資料已匯出')"><i class="ti ti-file-spreadsheet"></i>IPAQ身體活動量（.csv）</button>
+          <button class="btn" onclick="showToast('步數資料已匯出')"><i class="ti ti-file-spreadsheet"></i>步數截圖比對（.csv）</button>
+          <button class="btn" onclick="showToast('日誌已匯出')"><i class="ti ti-file-text"></i>三件好事日誌（.csv）</button>
+          <button class="btn" onclick="showToast('基本資料已匯出')"><i class="ti ti-file-spreadsheet"></i>基本資料問卷（.csv）</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<nav class="nav" id="main-nav" style="display:none">
+  <button class="nav-item active" id="nav-home" onclick="goScreen('home')"><i class="ti ti-home"></i>首頁</button>
+  <button class="nav-item" id="nav-journal" onclick="goScreen('journal')"><i class="ti ti-pencil"></i>日誌</button>
+  <button class="nav-item" id="nav-steps" onclick="goScreen('steps')"><i class="ti ti-shoe"></i>步數</button>
+  <button class="nav-item" id="nav-scale" onclick="goScreen('scale')"><i class="ti ti-clipboard-list"></i>量表</button>
+  <button class="nav-item" id="nav-progress" onclick="goScreen('progress')"><i class="ti ti-chart-line"></i>進度</button>
+</nav>
+<div id="toast"></div>
+</div>
+</div>
+<script>
+const noNavScreens=['welcome','profile'];
+const aiFeedbacks=['你今天注意到了三件小事——身體的舒暢感、人際連結，還有日常的小樂趣。Fredrickson說，正向情緒不需要轟轟烈烈，這些小小的覺察，正在慢慢累積你的心理韌性。','你能在忙碌中找到值得感謝的事，這本身就是一種能力。研究發現，持續練習三件好事的人，六個月後幸福感仍然明顯高於對照組。','看到你寫下的這三件事，都有一個共同點——你在其中都是主動的。選擇去運動、去聊天、去享受食物，這些都是你為自己創造的正向經驗。'];
+let aiIdx=0,toastTimer,curStep=0;
+function goScreen(n){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(b=>b.classList.remove('active'));
+  document.getElementById('screen-'+n).classList.add('active');
+  const ni=document.getElementById('nav-'+n);
+  if(ni)ni.classList.add('active');
+  document.getElementById('main-nav').style.display=noNavScreens.includes(n)?'none':'flex';
+}
+function pickRadio(gid,el){
+  document.querySelectorAll('#'+gid+' .radio-opt').forEach(o=>o.classList.remove('sel'));
+  el.classList.add('sel');
+}
+function pickCheck(el,gid,max){
+  const g=document.getElementById(gid);
+  const checked=g.querySelectorAll('.check-opt.sel');
+  if(!el.classList.contains('sel')&&checked.length>=max){showToast('最多選'+max+'項');return;}
+  el.classList.toggle('sel');
+}
+function setDots(step){
+  for(let i=0;i<4;i++){
+    const d=document.getElementById('dot'+i);
+    d.className='sdot';
+    if(i<step)d.classList.add('done');
+    else if(i===step)d.classList.add('active');
+  }
+}
+function nextStep(from){
+  if(from===0){
+    if(!document.getElementById('dept').value){showToast('請填寫就讀系所');return;}
+    if(!document.getElementById('age').value){showToast('請填寫年齡');return;}
+    if(!document.getElementById('grade').value){showToast('請選擇年級');return;}
+    if(!document.querySelector('#gender-group .sel')){showToast('請選擇性別');return;}
+  }
+  if(from===1){if(!document.getElementById('height').value||!document.getElementById('weight').value){showToast('請填寫身高與體重');return;}}
+  if(from===2){
+    if(!document.querySelector('#freq-group .sel')){showToast('請選擇運動頻率');return;}
+    if(!document.querySelector('#dur-group .sel')){showToast('請選擇每次時間');return;}
+  }
+  document.getElementById('step-'+from).style.display='none';
+  curStep=from+1;
+  document.getElementById('step-'+curStep).style.display='block';
+  setDots(curStep);
+}
+function prevStep(from){
+  document.getElementById('step-'+from).style.display='none';
+  curStep=from-1;
+  document.getElementById('step-'+curStep).style.display='block';
+  setDots(curStep);
+}
+function calcBMI(){
+  const h=parseFloat(document.getElementById('height').value);
+  const w=parseFloat(document.getElementById('weight').value);
+  const bv=document.getElementById('bmi-val');
+  const bc=document.getElementById('bmi-cat');
+  if(h>0&&w>0){
+    const b=w/((h/100)**2);
+    bv.textContent=b.toFixed(1)+' kg/m²';
+    let c='',col='';
+    if(b<18.5){c='體重過輕';col='#185FA5';}
+    else if(b<24){c='正常範圍';col='#0F6E56';}
+    else if(b<27){c='過重';col='#BA7517';}
+    else{c='肥胖';col='#A32D2D';}
+    bc.textContent=c;bc.style.color=col;
+  }else{bv.textContent='—';bc.textContent='填入身高體重後顯示';bc.style.color='';}
+}
+function submitProfile(){
+  if(!document.querySelector('#prev-group .sel')){showToast('請選擇是否曾參與有氧課程');return;}
+  showToast('基本資料已送出！');
+  setTimeout(()=>goScreen('home'),1200);
+}
+function saveJournal(){
+  const t1=document.getElementById('t1').value;
+  const t2=document.getElementById('t2').value;
+  const t3=document.getElementById('t3').value;
+  if(!t1&&!t2&&!t3){showToast('請至少填寫一件好事');return;}
+  const fb=document.getElementById('ai-feedback');
+  fb.style.display='block';
+  document.getElementById('ai-loading').style.display='flex';
+  document.getElementById('ai-result').style.display='none';
+  document.getElementById('save-btn').disabled=true;
+  setTimeout(()=>{
+    document.getElementById('ai-loading').style.display='none';
+    const r=document.getElementById('ai-result');
+    r.style.display='block';
+    r.textContent=aiFeedbacks[aiIdx%aiFeedbacks.length];
+    aiIdx++;
+    document.getElementById('save-btn').disabled=false;
+    showToast('日誌已儲存！連續書寫第7天');
+  },2000);
+}
+const stepsData=[{day:'一',steps:9200},{day:'二',steps:6800},{day:'三',steps:10500},{day:'四',steps:5200},{day:'五',steps:8800},{day:'六',steps:11200},{day:'日',steps:4100}];
+function simulateUpload(){
+  const zone=document.getElementById('upload-zone');
+  zone.innerHTML='<i class="ti ti-loader" style="font-size:26px;color:var(--primary);display:block;margin-bottom:6px"></i><div class="uz-title">辨識中…</div>';
+  setTimeout(()=>{
+    zone.style.display='none';
+    document.getElementById('steps-preview').style.display='block';
+    const rows=document.getElementById('steps-rows');
+    rows.innerHTML='';
+    const max=Math.max(...stepsData.map(d=>d.steps));
+    stepsData.forEach(d=>{
+      const pct=Math.round(d.steps/max*100);
+      const ok=d.steps>=8000;
+      rows.innerHTML+=`<div class="steps-row"><span class="steps-day">${d.day}</span><div class="steps-bar-bg"><div class="steps-bar-fill" style="width:${pct}%"></div></div><span class="steps-count">${d.steps.toLocaleString()}</span><span class="steps-ok">${ok?'✓':''}</span></div>`;
+    });
+    showToast('截圖上傳成功！資料已傳送給研究者');
+  },1800);
+}
+const chiItems=[{q:'生活如意程度',opts:['不如意','還算如意','相當如意','非常如意']},{q:'快樂程度',opts:['不快樂','快樂','相當快樂','快樂得不得了']},{q:'對未來樂觀程度',opts:['不樂觀','有些樂觀','樂觀','充滿希望']},{q:'生活滿意度',opts:['無任何滿意','一些事滿意','大部分滿意','每件事滿意']},{q:'活力程度',opts:['沒有活力','相當有活力','非常有活力','無窮活力']}];
+const cq=document.getElementById('chi-questions');
+chiItems.forEach((item,i)=>{
+  const w=document.createElement('div');
+  w.className='scale-q';
+  w.innerHTML=`<div class="sq-label">${i+1}. ${item.q}</div>`;
+  const row=document.createElement('div');
+  row.className='scale-opts';
+  item.opts.forEach((opt,j)=>{
+    const btn=document.createElement('button');
+    btn.className='sopt';btn.textContent=j;btn.title=opt;
+    btn.onclick=()=>{row.querySelectorAll('.sopt').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');};
+    row.appendChild(btn);
+  });
+  w.appendChild(row);
+  const ends=document.createElement('div');
+  ends.className='scale-ends';
+  ends.innerHTML=`<span>${item.opts[0]}</span><span>${item.opts[3]}</span>`;
+  w.appendChild(ends);
+  cq.appendChild(w);
+});
+function switchRTab(el,tid){
+  document.querySelectorAll('.rtab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.ptab-content').forEach(c=>c.classList.remove('active'));
+  document.getElementById(tid).classList.add('active');
+}
+let toastT;
+function showToast(msg){
+  const el=document.getElementById('toast');
+  el.textContent=msg;el.style.opacity='1';
+  clearTimeout(toastT);toastT=setTimeout(()=>el.style.opacity='0',2300);
+}
+</script>
+</body>
+</html>
