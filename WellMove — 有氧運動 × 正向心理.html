@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)file:///C:/Users/FJUSER240415F/Downloads/wellmove%20(1).html -->
+<html lang="zh-TW"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>WellMove — 有氧運動 × 正向心理</title>
+<link rel="stylesheet" href="./WellMove — 有氧運動 × 正向心理_files/tabler-icons.min.css">
+<style>
+/* ── Reset & Base ── */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAF7F5;
+  --bg2:#F2EBE6;
+  --bg3:#FFFFFF;
+  --card:#FFFFFF;
+  --border:#E8DDD8;
+  --border2:#D4C8C0;
+  --primary:#B08A9E;
+  --primary-dark:#8A6878;
+  --primary-light:#E8D4E0;
+  --accent:#E8A598;
+  --sage:#8BA89E;
+  --lavender:#A99DBE;
+  --dark:#3D3347;
+  --mid:#6B5B72;
+  --muted:#A0909A;
+  --text:#2C2030;
+  --text2:#6B5B72;
+  --text3:#A0909A;
+  --success:#4CAF78;
+  --warning:#E8A040;
+  --radius:14px;
+  --radius-sm:10px;
+  --radius-xs:8px;
+}
+html,body{height:100%;background:#E8E0EC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;color:var(--text);-webkit-font-smoothing:antialiased}
+
+/* ── Phone shell ── */
+.phone-wrap{display:flex;justify-content:center;padding:20px 0 40px;min-height:100vh}
+.phone{width:390px;min-height:844px;background:var(--bg);border-radius:44px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.25);display:flex;flex-direction:column;position:relative}
+.status-bar{background:var(--dark);padding:12px 24px 8px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
+.status-bar span{color:#fff;font-size:12px;font-weight:600}
+
+/* ── Screens ── */
+.screen{flex:1;overflow-y:auto;display:none;flex-direction:column}
+.screen.active{display:flex}
+.screen-body{padding:16px;display:flex;flex-direction:column;gap:12px;padding-bottom:90px}
+
+/* ── Nav ── */
+.nav{display:flex;background:#fff;border-top:0.5px solid var(--border);flex-shrink:0;position:relative}
+.nav-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:10px 4px 12px;gap:3px;border:none;background:none;color:var(--text3);font-size:9.5px;cursor:pointer;transition:color .15s}
+.nav-item i{font-size:21px}
+.nav-item.active{color:var(--primary)}
+
+/* ── Header ── */
+.app-header{background:var(--dark);padding:8px 20px 16px;flex-shrink:0}
+.ah-top{display:flex;justify-content:space-between;align-items:center}
+.ah-name{font-size:20px;font-weight:600;color:#fff}
+.ah-sub{font-size:12px;color:#C9A8BE;margin-top:1px}
+.ah-badge{background:var(--primary);color:#fff;font-size:10px;font-weight:600;padding:3px 10px;border-radius:20px}
+
+/* ── Cards ── */
+.card{background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius);padding:14px}
+.card-title{font-size:13px;font-weight:600;color:var(--text2);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.card-title i{font-size:15px;color:var(--primary)}
+
+/* ── Hero welcome ── */
+.hero{background:var(--dark);padding:32px 24px 24px;display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.hero-logo{width:80px;height:80px;background:var(--primary);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:14px}
+.hero-logo-w{font-size:34px;font-weight:700;color:#fff;line-height:1}
+.hero-logo-sub{font-size:10px;color:#E8D4E0;letter-spacing:.14em;margin-top:1px}
+.hero-title{font-size:28px;font-weight:700;color:#fff;margin-bottom:4px}
+.hero-en{font-size:11px;color:#C9A8BE;letter-spacing:.1em;margin-bottom:10px}
+.hero-desc{font-size:12px;color:#A898B8;text-align:center;line-height:1.8;max-width:280px}
+
+/* ── Mascot strip ── */
+.mascot-strip{background:#2A2238;padding:14px 16px 12px;flex-shrink:0}
+.mascot-label{font-size:10px;color:#8878A0;text-align:center;margin-bottom:10px;letter-spacing:.06em}
+.mascot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mascot-cell{display:flex;flex-direction:column;align-items:center;gap:5px}
+.mascot-img{width:82px;height:82px;border-radius:14px;overflow:hidden;border:1.5px solid #4A3A58;background:#3A2E48}
+.mascot-img img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.mascot-name{font-size:11px;color:#C9A8BE;font-weight:600}
+.mascot-role{font-size:9px;color:#7868A0;text-align:center;line-height:1.4}
+
+/* ── Buttons ── */
+.btn{width:100%;padding:13px;border-radius:var(--radius-sm);border:0.5px solid var(--border2);background:var(--card);color:var(--text);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:inherit}
+.btn i{font-size:16px;color:var(--primary)}
+.btn-primary{background:var(--primary);color:#fff;border-color:var(--primary);justify-content:center;font-weight:600;font-size:15px;padding:15px}
+.btn-primary i{color:#fff}
+.btn-secondary{background:transparent;color:var(--text3);border-color:var(--border);justify-content:center;font-size:13px}
+
+/* ── Form ── */
+.fgrp{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
+.flbl{font-size:12px;font-weight:600;color:var(--text2)}
+.flbl .req{color:#C0404A;font-size:10px;margin-left:3px}
+input[type=text],input[type=number],select,textarea{width:100%;padding:10px 12px;border:0.5px solid var(--border2);border-radius:var(--radius-xs);font-size:13px;font-family:inherit;background:#fff;color:var(--text);outline:none;transition:border-color .15s}
+input:focus,select:focus,textarea:focus{border-color:var(--primary)}
+textarea{resize:none}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+
+/* ── Radio / Checkbox ── */
+.radio-group{display:flex;flex-direction:column;gap:6px}
+.radio-opt{display:flex;align-items:center;gap:9px;padding:10px 12px;border:0.5px solid var(--border);border-radius:var(--radius-xs);cursor:pointer;font-size:13px;color:var(--text);transition:all .15s;user-select:none}
+.radio-opt.sel{border-color:var(--primary);background:#F7F0EC;color:var(--primary-dark)}
+.radio-opt input{accent-color:var(--primary);width:15px;height:15px;flex-shrink:0}
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.check-opt{display:flex;align-items:center;gap:7px;padding:9px 10px;border:0.5px solid var(--border);border-radius:var(--radius-xs);cursor:pointer;font-size:12px;color:var(--text);transition:all .15s;user-select:none}
+.check-opt.sel{border-color:var(--primary);background:#F7F0EC;color:var(--primary-dark)}
+.check-opt input{accent-color:var(--primary);width:14px;height:14px;flex-shrink:0}
+
+/* ── Step dots ── */
+.step-dots{display:flex;gap:6px;justify-content:center;padding:4px 0}
+.sdot{width:8px;height:8px;border-radius:50%;background:var(--bg2);border:0.5px solid var(--border2);transition:all .2s}
+.sdot.active{background:var(--primary);border-color:var(--primary)}
+.sdot.done{background:#E1F5EE;border-color:var(--sage)}
+
+/* ── BMI box ── */
+.bmi-box{padding:10px 12px;background:var(--bg2);border-radius:var(--radius-xs);display:flex;justify-content:space-between;align-items:center;margin-top:4px}
+.bmi-val{font-size:18px;font-weight:700;color:var(--primary)}
+.bmi-cat{font-size:11px;color:var(--text3);text-align:right}
+
+/* ── Section label ── */
+.slabel{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;padding:0 2px}
+
+/* ── Stat grid ── */
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.scard{background:var(--bg2);border-radius:var(--radius-xs);padding:11px 12px;text-align:center}
+.snum{font-size:24px;font-weight:700;color:var(--primary)}
+.slb{font-size:11px;color:var(--text3);margin-top:2px}
+
+/* ── Streak ── */
+.streak{display:flex;align-items:center;gap:10px;padding:11px 14px;background:var(--bg2);border-radius:var(--radius-sm)}
+.streak-num{font-size:26px;font-weight:700;color:var(--primary)}
+.streak-info{flex:1}
+.streak-title{font-size:13px;font-weight:600;color:var(--text)}
+.streak-sub{font-size:11px;color:var(--text3);margin-top:1px}
+
+/* ── Week row ── */
+.week-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.wday{aspect-ratio:1;border-radius:var(--radius-xs);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;border:0.5px solid var(--border);background:var(--bg2);color:var(--text3);gap:2px}
+.wday span{font-size:17px}
+.wday.done{background:#EEEDFE;border-color:#AFA9EC;color:#3C3489}
+.wday.today{background:var(--primary);border-color:var(--primary);color:#fff}
+
+/* ── Item row ── */
+.irow{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:0.5px solid var(--border)}
+.irow:last-child{border-bottom:none;padding-bottom:0}
+.iico{width:34px;height:34px;border-radius:var(--radius-xs);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.iico.pu{background:#EEEDFE;color:#534AB7}
+.iico.te{background:#E1F5EE;color:#0F6E56}
+.iico.co{background:#FAECE7;color:#993C1D}
+.itx{flex:1}
+.ititle{font-size:13px;font-weight:600;color:var(--text)}
+.isub{font-size:11px;color:var(--text3);margin-top:2px}
+
+/* ── Badge ── */
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.bp{background:#EEEDFE;color:#3C3489}
+.bt{background:#E1F5EE;color:#085041}
+.bc{background:#FAECE7;color:#712B13}
+
+/* ── Progress bar ── */
+.prow{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.plbl{font-size:11px;color:var(--text3);width:68px;flex-shrink:0}
+.pbg{flex:1;height:6px;background:var(--bg2);border-radius:3px;overflow:hidden}
+.pfill{height:100%;border-radius:3px;background:var(--primary)}
+.pnum{font-size:11px;color:var(--text3);width:32px;text-align:right}
+
+/* ── AI box ── */
+.ai-box{background:#F7F0EC;border:0.5px solid #D4B8C8;border-radius:var(--radius);padding:13px 14px;margin-top:10px}
+.ai-label{font-size:11px;font-weight:600;color:#72243E;margin-bottom:7px;display:flex;align-items:center;gap:5px}
+.ai-text{font-size:13px;color:var(--dark);line-height:1.7}
+.ai-loading{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--text3)}
+.dots{display:flex;gap:3px}
+.dots span{width:5px;height:5px;background:var(--primary);border-radius:50%;animation:blink 1.2s infinite}
+.dots span:nth-child(2){animation-delay:.2s}
+.dots span:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.2}40%{opacity:1}}
+
+/* ── Steps upload ── */
+.upload-zone{border:1.5px dashed var(--border2);border-radius:var(--radius);padding:22px 14px;text-align:center;cursor:pointer;transition:background .15s}
+.upload-zone:hover{background:var(--bg2)}
+.upload-zone i{font-size:30px;color:var(--primary);display:block;margin-bottom:7px}
+.uz-title{font-size:13px;font-weight:600;color:var(--text)}
+.uz-sub{font-size:11px;color:var(--text3);margin-top:3px}
+
+/* ── Steps data ── */
+.steps-header{background:var(--primary);padding:10px 14px;border-radius:var(--radius-sm) var(--radius-sm) 0 0;color:#fff;font-size:13px;font-weight:600}
+.steps-data{border:0.5px solid var(--border);border-top:none;border-radius:0 0 var(--radius-sm) var(--radius-sm);padding:12px 14px}
+.steps-row{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:0.5px solid var(--border);font-size:12px}
+.steps-row:last-child{border-bottom:none}
+.steps-day{color:var(--text3);width:24px;flex-shrink:0}
+.steps-bar-bg{flex:1;height:5px;background:var(--bg2);border-radius:3px;overflow:hidden}
+.steps-bar-fill{height:100%;border-radius:3px;background:var(--primary)}
+.steps-count{font-weight:600;color:var(--text);width:48px;text-align:right;font-size:11px}
+.steps-ok{width:14px;color:var(--success);font-size:11px}
+.met-summary{margin-top:10px;padding:10px 12px;background:var(--bg2);border-radius:var(--radius-xs)}
+.met-label{font-size:11px;color:var(--text3)}
+.met-val{font-size:18px;font-weight:700;color:var(--primary)}
+.met-note{font-size:11px;color:var(--success)}
+
+/* ── Scale ── */
+.scale-q{margin-bottom:14px}
+.sq-label{font-size:12px;font-weight:600;color:var(--text);margin-bottom:7px}
+.scale-opts{display:flex;gap:4px}
+.sopt{flex:1;height:38px;border-radius:var(--radius-xs);border:0.5px solid var(--border);background:var(--bg2);font-size:13px;font-weight:600;cursor:pointer;color:var(--text3);transition:all .15s;font-family:inherit}
+.sopt.sel{background:var(--primary);border-color:var(--primary);color:#fff}
+.scale-ends{display:flex;justify-content:space-between;margin-top:4px}
+.scale-ends span{font-size:10px;color:var(--text3)}
+
+/* ── Researcher tabs ── */
+.rtabs{display:flex;gap:6px;margin-bottom:10px}
+.rtab{padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600;border:0.5px solid var(--border2);cursor:pointer;background:var(--card);color:var(--text3);font-family:inherit}
+.rtab.active{background:var(--primary);border-color:var(--primary);color:#fff}
+.ptab-content{display:none}
+.ptab-content.active{display:block}
+
+/* ── Participant row ── */
+.p-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:0.5px solid var(--border)}
+.p-row:last-child{border-bottom:none}
+.avatar{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.av-a{background:#EEEDFE;color:#3C3489}
+.av-b{background:#E1F5EE;color:#085041}
+.av-c{background:#FAECE7;color:#712B13}
+.p-name{font-size:13px;font-weight:600;color:var(--text)}
+.p-sub{font-size:11px;color:var(--text3)}
+.compliance{margin-left:auto;font-size:12px;font-weight:700}
+.c-hi{color:var(--success)}
+.c-mid{color:var(--warning)}
+.c-lo{color:#C04040}
+
+/* ── Consent ── */
+.consent-box{background:#F7F0EC;border:0.5px solid #D4B8C8;border-radius:var(--radius);padding:14px;font-size:12px;color:var(--dark);line-height:1.8;max-height:200px;overflow-y:auto}
+.consent-box h4{font-size:13px;font-weight:700;margin-bottom:6px;color:var(--dark)}
+.consent-box p{margin-bottom:8px}
+
+/* ── Toast ── */
+#toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:var(--dark);color:#fff;padding:9px 20px;border-radius:20px;font-size:12px;font-weight:600;opacity:0;transition:opacity .3s;white-space:nowrap;pointer-events:none;z-index:999}
+
+/* ── Info card ── */
+.info-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.info-card{background:var(--bg2);border-radius:var(--radius-xs);padding:9px 6px;text-align:center}
+.ic-num{font-size:17px;font-weight:700;color:var(--primary)}
+.ic-lbl{font-size:9px;color:var(--text3);margin-top:2px}
+
+/* ── Feature grid ── */
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.feat{background:var(--bg2);border-radius:var(--radius-sm);padding:12px;display:flex;align-items:flex-start;gap:9px}
+.fi{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+.ft{font-size:12px;font-weight:600;color:var(--text)}
+.fs{font-size:10px;color:var(--text3);margin-top:2px;line-height:1.4}
+
+.divider{height:0.5px;background:var(--border);flex-shrink:0}
+.footer-note{text-align:center;font-size:10px;color:var(--text3);line-height:1.7;padding-top:4px}
+.section-divider{font-size:10px;font-weight:700;color:var(--primary);padding:4px 0 2px;border-bottom:0.5px solid var(--primary-light);margin-bottom:6px}
+.week-summary{background:#EEEDFE;border-radius:var(--radius);padding:13px 14px;border:0.5px solid #AFA9EC}
+.ws-title{font-size:12px;font-weight:700;color:#3C3489;margin-bottom:7px;display:flex;align-items:center;gap:5px}
+.ws-quote{font-size:12px;color:#534AB7;font-style:italic;line-height:1.6;border-left:2px solid #7F77DD;padding-left:10px}
+</style>
+</head>
+<body>
+<div class="phone-wrap">
+<div class="phone">
+<div class="status-bar">
+  <span>9:41</span><span>WellMove</span>
+  <span></span>
+</div>
+
+<!-- ══════════════════════════════
+     SCREEN: WELCOME
+══════════════════════════════ -->
+<div class="screen active" id="screen-welcome" style="overflow-y:auto">
+  <div class="hero">
+    <div class="hero-logo">
+      <div class="hero-logo-w">W</div>
+      <div class="hero-logo-sub">WELLMOVE</div>
+    </div>
+    <div class="hero-title">WellMove</div>
+    <div class="hero-en">WELL-BEING × MOVEMENT</div>
+    <div class="hero-desc">結合有氧運動與正向心理課程<br>陪你在四週內提升身體活動量<br>與主觀幸福感</div>
+  </div>
+
+  <div class="mascot-strip">
+    <div class="mascot-label">校園三寶陪你一起</div>
+    <div class="mascot-grid">
+      <div class="mascot-cell">
+        <div class="mascot-img"><div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:36px">🐿️</div></div>
+        <div class="mascot-name">灰灰</div>
+        <div class="mascot-role">日誌嚮導<br>AI 回饋</div>
+      </div>
+      <div class="mascot-cell">
+        <div class="mascot-img"><div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:36px">🐕</div></div>
+        <div class="mascot-name">墨墨</div>
+        <div class="mascot-role">運動隊長<br>打卡鼓勵</div>
+      </div>
+      <div class="mascot-cell">
+        <div class="mascot-img"><div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:36px">🐦</div></div>
+        <div class="mascot-name">麻麻</div>
+        <div class="mascot-role">量表提醒<br>進度觀察</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:20px 20px 28px;display:flex;flex-direction:column;gap:14px">
+    <div class="feat-grid">
+      <div class="feat"><div class="fi" style="background:#EEEDFE"><i class="ti ti-pencil" style="color:#534AB7"></i></div><div><div class="ft">正向日誌</div><div class="fs">三件好事 + AI 回饋</div></div></div>
+      <div class="feat"><div class="fi" style="background:#E1F5EE"><i class="ti ti-shoe" style="color:#0F6E56"></i></div><div><div class="ft">步數上傳</div><div class="fs">截圖客觀驗證</div></div></div>
+      <div class="feat"><div class="fi" style="background:#FAECE7"><i class="ti ti-clipboard-list" style="color:#993C1D"></i></div><div><div class="ft">量表填寫</div><div class="fs">CHI + IPAQ</div></div></div>
+      <div class="feat"><div class="fi" style="background:#F7F0EC"><i class="ti ti-chart-line" style="color:#72243E"></i></div><div><div class="ft">進度追蹤</div><div class="fs">出席與依從率</div></div></div>
+    </div>
+    <div class="info-row">
+      <div class="info-card"><div class="ic-num">4</div><div class="ic-lbl">週課程</div></div>
+      <div class="info-card"><div class="ic-num">8</div><div class="ic-lbl">堂課</div></div>
+      <div class="info-card"><div class="ic-num">60'</div><div class="ic-lbl">每次</div></div>
+      <div class="info-card"><div class="ic-num">60</div><div class="ic-lbl">招募人數</div></div>
+    </div>
+    <button class="btn btn-primary" onclick="goScreen(&#39;profile&#39;)">開始填寫基本資料</button>
+    <button class="btn btn-secondary" onclick="goScreen(&#39;home&#39;)">已有帳號，登入繼續</button>
+    <div class="footer-note">本研究已通過倫理審查，所有資料匿名保存<br>指導教授：李思賢　研究生：劉伊茜</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SCREEN: PROFILE (4步驟)
+══════════════════════════════ -->
+<div class="screen" id="screen-profile">
+  <div class="app-header">
+    <div class="ah-top"><div class="ah-name">基本資料問卷</div></div>
+    <div class="ah-sub">請依實際情況填寫，所有資料僅供研究使用</div>
+  </div>
+  <div class="screen-body">
+    <div class="step-dots" id="step-dots">
+      <div class="sdot active" id="dot0"></div>
+      <div class="sdot" id="dot1"></div>
+      <div class="sdot" id="dot2"></div>
+      <div class="sdot" id="dot3"></div>
+    </div>
+
+    <!-- Step 0: 個人資料 -->
+    <div id="step-0">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <div style="font-size:14px;font-weight:700;color:var(--text)">個人基本資料</div>
+          <div style="font-size:11px;color:var(--text3)">1 / 4</div>
+        </div>
+        <div class="section-divider">就讀資訊</div>
+        <div class="fgrp">
+          <div class="flbl">就讀學校</div>
+          <input type="text" value="輔仁大學" readonly="" style="background:var(--bg2);color:var(--text3)">
+        </div>
+        <div class="fgrp">
+          <div class="flbl">就讀系所 <span class="req">*</span></div>
+          <input type="text" id="dept" placeholder="請填寫系所名稱">
+        </div>
+        <div class="row2">
+          <div class="fgrp">
+            <div class="flbl">年齡 <span class="req">*</span></div>
+            <input type="number" id="age" placeholder="歲" min="18" max="40">
+          </div>
+          <div class="fgrp">
+            <div class="flbl">年級 <span class="req">*</span></div>
+            <select id="grade">
+              <option value="">請選擇</option>
+              <option>大一</option><option>大二</option><option>大三</option><option>大四</option><option>研究生</option>
+            </select>
+          </div>
+        </div>
+        <div class="fgrp">
+          <div class="flbl">性別 <span class="req">*</span></div>
+          <div class="radio-group" id="gender-group">
+            <label class="radio-opt" onclick="pickRadio(&#39;gender-group&#39;,this)"><input type="radio" name="gender" value="男">男</label>
+            <label class="radio-opt" onclick="pickRadio(&#39;gender-group&#39;,this)"><input type="radio" name="gender" value="女">女</label>
+            <label class="radio-opt" onclick="pickRadio(&#39;gender-group&#39;,this)"><input type="radio" name="gender" value="other">其他／不願透露</label>
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="nextStep(0)" style="margin-top:6px">下一步</button>
+      </div>
+    </div>
+
+    <!-- Step 1: 身體測量 -->
+    <div id="step-1" style="display:none">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <div style="font-size:14px;font-weight:700;color:var(--text)">身體測量資料</div>
+          <div style="font-size:11px;color:var(--text3)">2 / 4</div>
+        </div>
+        <div style="font-size:12px;color:var(--text3);margin-bottom:10px;line-height:1.6">請依實際測量數值填寫，BMI 由系統自動計算。</div>
+        <div class="row3">
+          <div class="fgrp">
+            <div class="flbl">身高 <span class="req">*</span></div>
+            <input type="number" id="height" placeholder="公分" oninput="calcBMI()">
+          </div>
+          <div class="fgrp">
+            <div class="flbl">體重 <span class="req">*</span></div>
+            <input type="number" id="weight" placeholder="公斤" oninput="calcBMI()">
+          </div>
+          <div class="fgrp">
+            <div class="flbl">腰圍</div>
+            <input type="number" id="waist" placeholder="公分">
+          </div>
+        </div>
+        <div class="bmi-box">
+          <div>
+            <div style="font-size:11px;color:var(--text3)">BMI（自動計算）</div>
+            <div class="bmi-val" id="bmi-val">—</div>
+          </div>
+          <div class="bmi-cat" id="bmi-cat">填入身高體重後顯示</div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button class="btn" onclick="prevStep(1)" style="flex:1;justify-content:center;color:var(--text3)">上一步</button>
+          <button class="btn btn-primary" onclick="nextStep(1)" style="flex:2">下一步</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2: 運動習慣 -->
+    <div id="step-2" style="display:none">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <div style="font-size:14px;font-weight:700;color:var(--text)">過去運動習慣</div>
+          <div style="font-size:11px;color:var(--text3)">3 / 4</div>
+        </div>
+        <div class="fgrp">
+          <div class="flbl">每週規律運動頻率 <span class="req">*</span></div>
+          <div style="font-size:11px;color:var(--text3);margin-bottom:6px">規律運動係指每次持續 20 分鐘以上</div>
+          <div class="radio-group" id="freq-group">
+            <label class="radio-opt" onclick="pickRadio(&#39;freq-group&#39;,this)"><input type="radio" name="freq" value="0">幾乎不運動</label>
+            <label class="radio-opt" onclick="pickRadio(&#39;freq-group&#39;,this)"><input type="radio" name="freq" value="1">每週 1 次</label>
+            <label class="radio-opt" onclick="pickRadio(&#39;freq-group&#39;,this)"><input type="radio" name="freq" value="2">每週 2 次</label>
+            <label class="radio-opt" onclick="pickRadio(&#39;freq-group&#39;,this)"><input type="radio" name="freq" value="3">每週 3 次</label>
+            <label class="radio-opt" onclick="pickRadio(&#39;freq-group&#39;,this)"><input type="radio" name="freq" value="4+">每週 4 次以上</label>
+          </div>
+        </div>
+        <div class="fgrp" style="margin-top:4px">
+          <div class="flbl">每次運動持續時間 <span class="req">*</span></div>
+          <div class="radio-group" id="dur-group">
+            <label class="radio-opt" onclick="pickRadio(&#39;dur-group&#39;,this)"><input type="radio" name="dur" value="a">20 分鐘以下</label>
+            <label class="radio-opt" onclick="pickRadio(&#39;dur-group&#39;,this)"><input type="radio" name="dur" value="b">20 至 30 分鐘</label>
+            <label class="radio-opt" onclick="pickRadio(&#39;dur-group&#39;,this)"><input type="radio" name="dur" value="c">30 至 60 分鐘</label>
+            <label class="radio-opt" onclick="pickRadio(&#39;dur-group&#39;,this)"><input type="radio" name="dur" value="d">60 分鐘以上</label>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button class="btn" onclick="prevStep(2)" style="flex:1;justify-content:center;color:var(--text3)">上一步</button>
+          <button class="btn btn-primary" onclick="nextStep(2)" style="flex:2">下一步</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3: 運動類型 -->
+    <div id="step-3" style="display:none">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <div style="font-size:14px;font-weight:700;color:var(--text)">運動類型與經驗</div>
+          <div style="font-size:11px;color:var(--text3)">4 / 4</div>
+        </div>
+        <div class="fgrp">
+          <div class="flbl">最常從事的運動類型（可複選，最多 3 項）</div>
+          <div class="check-grid" id="sport-group" style="margin-top:6px">
+            <label class="check-opt" onclick="pickCheck(this,&#39;sport-group&#39;,3)"><input type="checkbox" value="慢跑/快走">慢跑／快走</label>
+            <label class="check-opt" onclick="pickCheck(this,&#39;sport-group&#39;,3)"><input type="checkbox" value="球類運動">球類運動</label>
+            <label class="check-opt" onclick="pickCheck(this,&#39;sport-group&#39;,3)"><input type="checkbox" value="游泳">游泳</label>
+            <label class="check-opt" onclick="pickCheck(this,&#39;sport-group&#39;,3)"><input type="checkbox" value="有氧舞蹈">有氧舞蹈／律動</label>
+            <label class="check-opt" onclick="pickCheck(this,&#39;sport-group&#39;,3)"><input type="checkbox" value="重量訓練">重量訓練</label>
+            <label class="check-opt" onclick="pickCheck(this,&#39;sport-group&#39;,3)"><input type="checkbox" value="騎腳踏車">騎腳踏車</label>
+            <label class="check-opt" onclick="pickCheck(this,&#39;sport-group&#39;,3)"><input type="checkbox" value="瑜珈">瑜珈／皮拉提斯</label>
+            <label class="check-opt" onclick="pickCheck(this,&#39;sport-group&#39;,3)"><input type="checkbox" value="other">其他</label>
+          </div>
+          <input type="text" id="sport-other" placeholder="其他運動類型（選填）" style="margin-top:6px">
+        </div>
+        <div class="fgrp">
+          <div class="flbl">參與本研究前是否曾固定參與有氧運動課程？ <span class="req">*</span></div>
+          <div class="radio-group" id="prev-group" style="margin-top:6px">
+            <label class="radio-opt" onclick="pickRadio(&#39;prev-group&#39;,this);showPrevInput(true)"><input type="radio" name="prev" value="yes">是</label>
+            <label class="radio-opt" onclick="pickRadio(&#39;prev-group&#39;,this);showPrevInput(false)"><input type="radio" name="prev" value="no">否</label>
+          </div>
+          <input type="text" id="prev-course" placeholder="課程名稱／形式" style="margin-top:6px;display:none">
+        </div>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button class="btn" onclick="prevStep(3)" style="flex:1;justify-content:center;color:var(--text3)">上一步</button>
+          <button class="btn btn-primary" onclick="submitProfile()" style="flex:2">送出問卷</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SCREEN: HOME
+══════════════════════════════ -->
+<div class="screen" id="screen-home">
+  <div class="app-header">
+    <div class="ah-top">
+      <div>
+        <div class="ah-name">今天好，<span id="user-name" style="color:#C9A8BE">同學</span></div>
+        <div class="ah-sub">第 2 週 · 第 3 堂課後</div>
+      </div>
+      <span class="badge bp">實驗組</span>
+    </div>
+  </div>
+  <div class="screen-body">
+    <div class="streak">
+      <div class="streak-num">6</div>
+      <div class="streak-info">
+        <div class="streak-title">連續書寫天數</div>
+        <div class="streak-sub">再寫 1 天達成 7 天里程碑！</div>
+      </div>
+      <i class="ti ti-flame" style="font-size:24px;color:#BA7517"></i>
+    </div>
+    <div class="card">
+      <div class="card-title"><i class="ti ti-calendar-check"></i>本週出席</div>
+      <div class="week-row">
+        <div class="wday done"><span>✓</span><div>週一</div></div>
+        <div class="wday done"><span>✓</span><div>週三</div></div>
+        <div class="wday today"><span>今</span><div>週四</div></div>
+        <div class="wday"><span>—</span><div>週六</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><i class="ti ti-flame"></i>今日任務</div>
+      <div class="irow">
+        <div class="iico pu"><i class="ti ti-writing"></i></div>
+        <div class="itx"><div class="ititle">三件好事書寫</div><div class="isub">完成後獲得 AI 正向回饋</div></div>
+        <span class="badge bp">待完成</span>
+      </div>
+      <div class="irow">
+        <div class="iico te"><i class="ti ti-shoe"></i></div>
+        <div class="itx"><div class="ititle">上傳今日步數截圖</div><div class="isub">手機健康 App 截圖上傳</div></div>
+        <span class="badge bt">已完成</span>
+      </div>
+      <div class="irow">
+        <div class="iico co"><i class="ti ti-clipboard-list"></i></div>
+        <div class="itx"><div class="ititle">IPAQ 活動量（本週）</div><div class="isub">每週一次，約 3 分鐘</div></div>
+        <span class="badge bt">已完成</span>
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="goScreen(&#39;journal&#39;)">
+      <i class="ti ti-pencil"></i>開始今日書寫
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SCREEN: JOURNAL
+══════════════════════════════ -->
+<div class="screen" id="screen-journal">
+  <div class="app-header">
+    <div class="ah-top"><div class="ah-name">正向日誌</div></div>
+    <div class="ah-sub">記錄今天的美好，灰灰陪你一起</div>
+  </div>
+  <div class="screen-body">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-stars"></i>三件好事</div>
+      <div style="font-size:12px;color:var(--text3);margin-bottom:12px;line-height:1.6">回想今天三件讓你感覺還不錯的事，大小都算。</div>
+      <div class="fgrp"><div class="flbl">第 1 件</div><textarea rows="2" id="t1" placeholder="例：運動完身體很舒暢…"></textarea></div>
+      <div class="fgrp"><div class="flbl">第 2 件</div><textarea rows="2" id="t2" placeholder="例：和朋友聊天很開心…"></textarea></div>
+      <div class="fgrp"><div class="flbl">第 3 件</div><textarea rows="2" id="t3" placeholder="例：今天吃到好吃的東西…"></textarea></div>
+      <button class="btn btn-primary" id="save-btn" onclick="saveJournal()" style="margin-top:4px">
+        <i class="ti ti-sparkles"></i>儲存並獲得 AI 回饋
+      </button>
+      <div class="ai-box" id="ai-feedback" style="display:none">
+        <div class="ai-label"><i class="ti ti-robot" style="font-size:13px"></i>灰灰的 AI 回饋</div>
+        <div id="ai-loading" class="ai-loading"><span>正在生成回饋</span><div class="dots"><span></span><span></span><span></span></div></div>
+        <div id="ai-result" style="display:none" class="ai-text"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><i class="ti ti-books"></i>本週正向回顧</div>
+      <div class="week-summary">
+        <div class="ws-title"><i class="ti ti-sparkles" style="font-size:13px"></i>你這週累積了 6 件好事</div>
+        <div class="ws-quote">「完成了期中考」「和室友一起煮飯」「跑步時突然覺得很輕鬆」「老師說我報告不錯」「今天天氣很好」「有時間看想看的書」</div>
+      </div>
+      <div style="font-size:12px;color:var(--text3);margin-top:10px;line-height:1.6">每一件小事都在累積你的正向能量。Fredrickson 的研究說，這些小小的好心情，會慢慢變成你面對壓力的資源。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SCREEN: STEPS
+══════════════════════════════ -->
+<div class="screen" id="screen-steps">
+  <div class="app-header">
+    <div class="ah-top"><div class="ah-name">步數上傳</div></div>
+    <div class="ah-sub">截圖上傳，墨墨幫你記錄</div>
+  </div>
+  <div class="screen-body">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-device-mobile"></i>上傳手機步數截圖</div>
+      <div style="font-size:12px;color:var(--text3);margin-bottom:12px;line-height:1.6">請開啟手機「健康」App（iOS）或「Google Fit」（Android），截圖今日步數後上傳。</div>
+      <div class="upload-zone" id="upload-zone" onclick="simulateUpload()">
+        <i class="ti ti-photo-up"></i>
+        <div class="uz-title">點此上傳截圖</div>
+        <div class="uz-sub">支援 JPG / PNG · 截圖只有你和研究者可見</div>
+      </div>
+      <div id="steps-preview" style="display:none;margin-top:10px">
+        <div class="steps-header"><i class="ti ti-check"></i> 本週步數紀錄（系統辨識結果）</div>
+        <div class="steps-data">
+          <div style="font-size:11px;color:var(--text3);margin-bottom:8px">與 WHO 建議（8,000 步/天）比對</div>
+          <div id="steps-rows"></div>
+          <div class="met-summary">
+            <div class="met-label">與 IPAQ 估算比對</div>
+            <div class="met-val">差異 ±8%</div>
+            <div class="met-note">✓ 兩種測量結果吻合，數據可信</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><i class="ti ti-lock"></i>隱私說明</div>
+      <div style="font-size:12px;color:var(--text3);line-height:1.7">截圖僅供研究者核對步數數值，不會儲存圖片原檔。所有資料以匿名編碼處理，符合研究倫理規範。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SCREEN: SCALE
+══════════════════════════════ -->
+<div class="screen" id="screen-scale">
+  <div class="app-header">
+    <div class="ah-top"><div class="ah-name">量表填寫</div></div>
+    <div class="ah-sub">麻麻提醒你認真作答</div>
+  </div>
+  <div class="screen-body">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-heart"></i>中文幸福量表（CHI）— 前測</div>
+      <div style="font-size:11px;color:var(--text3);margin-bottom:14px;line-height:1.6">請依最近三個月狀況作答，每題選一個最符合的選項（0 = 最低，3 = 最高）。</div>
+      <div id="chi-questions"><div class="scale-q"><div class="sq-label">1. 生活如意程度</div><div class="scale-opts"><button class="sopt" title="不如意">0</button><button class="sopt" title="還算如意">1</button><button class="sopt" title="相當如意">2</button><button class="sopt" title="非常如意">3</button></div><div class="scale-ends"><span>不如意</span><span>非常如意</span></div></div><div class="scale-q"><div class="sq-label">2. 快樂程度</div><div class="scale-opts"><button class="sopt" title="不快樂">0</button><button class="sopt" title="快樂">1</button><button class="sopt" title="相當快樂">2</button><button class="sopt" title="快樂得不得了">3</button></div><div class="scale-ends"><span>不快樂</span><span>快樂得不得了</span></div></div><div class="scale-q"><div class="sq-label">3. 對未來樂觀程度</div><div class="scale-opts"><button class="sopt" title="不樂觀">0</button><button class="sopt" title="有些樂觀">1</button><button class="sopt" title="樂觀">2</button><button class="sopt" title="充滿希望">3</button></div><div class="scale-ends"><span>不樂觀</span><span>充滿希望</span></div></div><div class="scale-q"><div class="sq-label">4. 生活滿意度</div><div class="scale-opts"><button class="sopt" title="無任何滿意">0</button><button class="sopt" title="一些事滿意">1</button><button class="sopt" title="大部分滿意">2</button><button class="sopt" title="每件事滿意">3</button></div><div class="scale-ends"><span>無任何滿意</span><span>每件事滿意</span></div></div><div class="scale-q"><div class="sq-label">5. 活力程度</div><div class="scale-opts"><button class="sopt" title="沒有活力">0</button><button class="sopt" title="相當有活力">1</button><button class="sopt" title="非常有活力">2</button><button class="sopt" title="無窮活力">3</button></div><div class="scale-ends"><span>沒有活力</span><span>無窮活力</span></div></div></div>
+      <button class="btn btn-primary" style="margin-top:12px" onclick="submitScale()">送出量表</button>
+    </div>
+    <div class="card">
+      <div class="card-title"><i class="ti ti-run"></i>IPAQ-SF 身體活動量</div>
+      <div style="font-size:11px;color:var(--text3);margin-bottom:10px">過去七天各類活動的頻率與時間：</div>
+      <div class="fgrp">
+        <div class="flbl">高強度活動（跑步、跳繩等）</div>
+        <div style="display:flex;gap:8px;align-items:center;margin-top:4px">
+          <input type="number" min="0" max="7" value="2" style="width:56px"> <span style="font-size:12px;color:var(--text3)">天，每天約</span>
+          <input type="number" min="0" value="30" style="width:56px"> <span style="font-size:12px;color:var(--text3)">分鐘</span>
+        </div>
+      </div>
+      <div class="fgrp">
+        <div class="flbl">中等強度活動（快走、有氧舞蹈等）</div>
+        <div style="display:flex;gap:8px;align-items:center;margin-top:4px">
+          <input type="number" min="0" max="7" value="3" style="width:56px"> <span style="font-size:12px;color:var(--text3)">天，每天約</span>
+          <input type="number" min="0" value="45" style="width:56px"> <span style="font-size:12px;color:var(--text3)">分鐘</span>
+        </div>
+      </div>
+      <div class="fgrp">
+        <div class="flbl">步行（持續 10 分鐘以上）</div>
+        <div style="display:flex;gap:8px;align-items:center;margin-top:4px">
+          <input type="number" min="0" max="7" value="5" style="width:56px"> <span style="font-size:12px;color:var(--text3)">天，每天約</span>
+          <input type="number" min="0" value="20" style="width:56px"> <span style="font-size:12px;color:var(--text3)">分鐘</span>
+        </div>
+      </div>
+      <div style="margin-top:10px;padding:10px 12px;background:var(--bg2);border-radius:var(--radius-xs)">
+        <div style="font-size:11px;color:var(--text3)">預估每週活動量</div>
+        <div style="font-size:18px;font-weight:700;color:var(--primary)">1,081 MET-min/週</div>
+        <div style="font-size:11px;color:var(--success)">✓ 達 WHO 建議標準</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SCREEN: PROGRESS
+══════════════════════════════ -->
+<div class="screen" id="screen-progress">
+  <div class="app-header">
+    <div class="ah-top"><div class="ah-name">我的進度</div></div>
+    <div class="ah-sub">麻麻幫你觀測每一步</div>
+  </div>
+  <div class="screen-body">
+    <div class="sgrid">
+      <div class="scard"><div class="snum" style="color:#4CAF78">87%</div><div class="slb">課程依從率</div></div>
+      <div class="scard"><div class="snum">6</div><div class="slb">連續書寫天</div></div>
+      <div class="scard"><div class="snum">12</div><div class="slb">日誌總篇數</div></div>
+      <div class="scard"><div class="snum">7/8</div><div class="slb">課程出席</div></div>
+    </div>
+    <div class="card">
+      <div class="card-title"><i class="ti ti-award"></i>完成進度</div>
+      <div class="prow"><div class="plbl">出席率</div><div class="pbg"><div class="pfill" style="width:87%"></div></div><div class="pnum">7/8</div></div>
+      <div class="prow"><div class="plbl">日誌</div><div class="pbg"><div class="pfill" style="width:75%"></div></div><div class="pnum">6/8</div></div>
+      <div class="prow"><div class="plbl">步數上傳</div><div class="pbg"><div class="pfill" style="width:85%"></div></div><div class="pnum">6/7</div></div>
+      <div class="prow"><div class="plbl">量表</div><div class="pbg"><div class="pfill" style="width:50%"></div></div><div class="pnum">1/2</div></div>
+    </div>
+    <div class="card">
+      <div class="card-title"><i class="ti ti-chart-line"></i>幸福感趨勢（CHI）</div>
+      <div style="display:flex;align-items:flex-end;gap:10px;height:90px;padding:4px 0 0">
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+          <div style="font-size:11px;font-weight:700;color:var(--primary)">32</div>
+          <div style="width:100%;background:#EEEDFE;border-radius:4px 4px 0 0;height:45px"></div>
+          <div style="font-size:10px;color:var(--text3)">前測</div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+          <div style="font-size:11px;font-weight:700;color:var(--primary)">41</div>
+          <div style="width:100%;background:var(--primary);border-radius:4px 4px 0 0;height:68px"></div>
+          <div style="font-size:10px;color:var(--text3)">第2週</div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;opacity:.3">
+          <div style="font-size:11px;color:var(--text3)">?</div>
+          <div style="width:100%;background:var(--primary);border-radius:4px 4px 0 0;height:76px"></div>
+          <div style="font-size:10px;color:var(--text3)">後測</div>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--text3);margin-top:6px;text-align:center">課程結束後解鎖後測分數</div>
+    </div>
+    <button class="btn" onclick="goScreen(&#39;admin&#39;)">
+      <i class="ti ti-database"></i>研究者後台
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SCREEN: ADMIN
+══════════════════════════════ -->
+<div class="screen" id="screen-admin">
+  <div class="app-header">
+    <div class="ah-top"><div class="ah-name">研究者後台</div></div>
+    <div class="ah-sub">即時監控依從率與資料完整性</div>
+  </div>
+  <div class="screen-body">
+    <div class="sgrid">
+      <div class="scard"><div class="snum">28</div><div class="slb">有效樣本</div></div>
+      <div class="scard"><div class="snum" style="color:#4CAF78">91%</div><div class="slb">平均依從率</div></div>
+      <div class="scard"><div class="snum">14</div><div class="slb">實驗組</div></div>
+      <div class="scard"><div class="snum">14</div><div class="slb">對照組</div></div>
+    </div>
+    <div class="rtabs">
+      <button class="rtab active" onclick="switchRTab(this,&#39;rt-overview&#39;)">總覽</button>
+      <button class="rtab" onclick="switchRTab(this,&#39;rt-participants&#39;)">參與者</button>
+      <button class="rtab" onclick="switchRTab(this,&#39;rt-export&#39;)">匯出</button>
+    </div>
+    <div class="ptab-content active" id="rt-overview">
+      <div class="card">
+        <div class="card-title"><i class="ti ti-chart-bar"></i>量表完成率</div>
+        <div class="prow"><div class="plbl">前測 CHI</div><div class="pbg"><div class="pfill" style="width:100%"></div></div><div class="pnum">28/28</div></div>
+        <div class="prow"><div class="plbl">前測 IPAQ</div><div class="pbg"><div class="pfill" style="width:100%"></div></div><div class="pnum">28/28</div></div>
+        <div class="prow"><div class="plbl">步數截圖</div><div class="pbg"><div class="pfill" style="width:89%"></div></div><div class="pnum">25/28</div></div>
+        <div class="prow" style="margin-bottom:0"><div class="plbl">後測 CHI</div><div class="pbg"><div class="pfill" style="width:0%;background:#E2D4E0"></div></div><div class="pnum">0/28</div></div>
+      </div>
+      <div class="card" style="margin-top:8px">
+        <div class="card-title"><i class="ti ti-shoe"></i>步數 vs IPAQ 比對</div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;justify-content:space-between;font-size:12px;padding:8px 10px;background:var(--bg2);border-radius:var(--radius-xs)"><span style="color:var(--text3)">平均差異</span><span style="font-weight:700;color:var(--success)">±9.2%</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;padding:8px 10px;background:var(--bg2);border-radius:var(--radius-xs)"><span style="color:var(--text3)">高估比例</span><span style="font-weight:700;color:var(--warning)">18/28（64%）</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;padding:8px 10px;background:var(--bg2);border-radius:var(--radius-xs)"><span style="color:var(--text3)">截圖上傳率</span><span style="font-weight:700;color:var(--success)">89%</span></div>
+        </div>
+        <div style="font-size:11px;color:var(--text3);margin-top:8px;line-height:1.6">此比對數據可於論文研究限制章節說明 IPAQ 自陳偏誤，並作為客觀驗證依據。</div>
+      </div>
+    </div>
+    <div class="ptab-content" id="rt-participants">
+      <div class="card">
+        <div class="card-title"><i class="ti ti-users"></i>參與者清單</div>
+        <div class="p-row"><div class="avatar av-a">A1</div><div><div class="p-name">實驗組 A1</div><div class="p-sub">出席 7/8 · 日誌 6/8</div></div><span class="compliance c-hi">87%</span></div>
+        <div class="p-row"><div class="avatar av-a">A2</div><div><div class="p-name">實驗組 A2</div><div class="p-sub">出席 8/8 · 日誌 8/8</div></div><span class="compliance c-hi">100%</span></div>
+        <div class="p-row"><div class="avatar av-b">B1</div><div><div class="p-name">對照組 B1</div><div class="p-sub">出席 6/8 · 日誌 —</div></div><span class="compliance c-mid">75%</span></div>
+        <div class="p-row" style="border-bottom:none"><div class="avatar av-c">B2</div><div><div class="p-name">對照組 B2</div><div class="p-sub">出席 4/8 · 日誌 —</div></div><span class="compliance c-lo">50%</span></div>
+      </div>
+    </div>
+    <div class="ptab-content" id="rt-export">
+      <div class="card">
+        <div class="card-title"><i class="ti ti-download"></i>匯出資料</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <button class="btn" onclick="showToast(&#39;CHI 量表資料已匯出&#39;)"><i class="ti ti-file-spreadsheet"></i>CHI 幸福量表（.csv）</button>
+          <button class="btn" onclick="showToast(&#39;IPAQ 資料已匯出&#39;)"><i class="ti ti-file-spreadsheet"></i>IPAQ 身體活動量（.csv）</button>
+          <button class="btn" onclick="showToast(&#39;步數比對資料已匯出&#39;)"><i class="ti ti-file-spreadsheet"></i>步數截圖比對（.csv）</button>
+          <button class="btn" onclick="showToast(&#39;日誌文字已匯出&#39;)"><i class="ti ti-file-text"></i>三件好事日誌（.csv）</button>
+          <button class="btn" onclick="showToast(&#39;基本資料已匯出&#39;)"><i class="ti ti-file-spreadsheet"></i>基本資料問卷（.csv）</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Nav -->
+<nav class="nav" id="main-nav" style="display:none">
+  <button class="nav-item active" id="nav-home" onclick="goScreen(&#39;home&#39;)"><i class="ti ti-home"></i>首頁</button>
+  <button class="nav-item" id="nav-journal" onclick="goScreen(&#39;journal&#39;)"><i class="ti ti-pencil"></i>日誌</button>
+  <button class="nav-item" id="nav-steps" onclick="goScreen(&#39;steps&#39;)"><i class="ti ti-shoe"></i>步數</button>
+  <button class="nav-item" id="nav-scale" onclick="goScreen(&#39;scale&#39;)"><i class="ti ti-clipboard-list"></i>量表</button>
+  <button class="nav-item" id="nav-progress" onclick="goScreen(&#39;progress&#39;)"><i class="ti ti-chart-line"></i>進度</button>
+</nav>
+
+<div id="toast"></div>
+</div>
+</div>
+
+<script>
+const noNavScreens=['welcome','profile'];
+const aiFeedbacks=[
+  '你今天注意到了三件小事——身體的舒暢感、人際連結，還有日常的小樂趣。Fredrickson 說，正向情緒不需要轟轟烈烈，這些小小的覺察，正在慢慢累積你的心理韌性。',
+  '你能在忙碌中找到值得感謝的事，這本身就是一種能力。研究發現，持續練習三件好事的人，六個月後幸福感仍然明顯高於對照組。',
+  '看到你寫下的這三件事，都有一個共同點——你在其中都是主動的。選擇去運動、去聊天、去享受食物，這些都是你為自己創造的正向經驗。',
+];
+let aiIdx=0,toastTimer,curStep=0;
+
+function goScreen(n){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(b=>b.classList.remove('active'));
+  document.getElementById('screen-'+n).classList.add('active');
+  const ni=document.getElementById('nav-'+n);
+  if(ni)ni.classList.add('active');
+  document.getElementById('main-nav').style.display=noNavScreens.includes(n)?'none':'flex';
+}
+
+function pickRadio(gid,el){
+  document.querySelectorAll('#'+gid+' .radio-opt').forEach(o=>o.classList.remove('sel'));
+  el.classList.add('sel');
+}
+function pickCheck(el,gid,max){
+  const g=document.getElementById(gid);
+  const checked=g.querySelectorAll('.check-opt.sel');
+  if(!el.classList.contains('sel')&&checked.length>=max){showToast('最多選'+max+'項');return;}
+  el.classList.toggle('sel');
+  el.querySelector('input').checked=el.classList.contains('sel');
+}
+function showPrevInput(v){document.getElementById('prev-course').style.display=v?'block':'none';}
+
+function setDots(step){
+  for(let i=0;i<4;i++){
+    const d=document.getElementById('dot'+i);
+    d.className='sdot';
+    if(i<step)d.classList.add('done');
+    else if(i===step)d.classList.add('active');
+  }
+}
+function nextStep(from){
+  if(from===0){
+    if(!document.getElementById('dept').value){showToast('請填寫就讀系所');return;}
+    if(!document.getElementById('age').value){showToast('請填寫年齡');return;}
+    if(!document.getElementById('grade').value){showToast('請選擇年級');return;}
+    if(!document.querySelector('#gender-group .sel')){showToast('請選擇性別');return;}
+  }
+  if(from===1){
+    if(!document.getElementById('height').value||!document.getElementById('weight').value){showToast('請填寫身高與體重');return;}
+  }
+  if(from===2){
+    if(!document.querySelector('#freq-group .sel')){showToast('請選擇運動頻率');return;}
+    if(!document.querySelector('#dur-group .sel')){showToast('請選擇每次時間');return;}
+  }
+  document.getElementById('step-'+from).style.display='none';
+  curStep=from+1;
+  document.getElementById('step-'+curStep).style.display='block';
+  setDots(curStep);
+}
+function prevStep(from){
+  document.getElementById('step-'+from).style.display='none';
+  curStep=from-1;
+  document.getElementById('step-'+curStep).style.display='block';
+  setDots(curStep);
+}
+function calcBMI(){
+  const h=parseFloat(document.getElementById('height').value);
+  const w=parseFloat(document.getElementById('weight').value);
+  const bv=document.getElementById('bmi-val');
+  const bc=document.getElementById('bmi-cat');
+  if(h>0&&w>0){
+    const b=w/((h/100)**2);
+    bv.textContent=b.toFixed(1)+' kg/m²';
+    let c='',col='';
+    if(b<18.5){c='體重過輕';col='#185FA5';}
+    else if(b<24){c='正常範圍';col='#0F6E56';}
+    else if(b<27){c='過重';col='#BA7517';}
+    else{c='肥胖';col='#A32D2D';}
+    bc.textContent=c;bc.style.color=col;
+  } else {bv.textContent='—';bc.textContent='填入身高體重後顯示';bc.style.color='';}
+}
+function submitProfile(){
+  if(!document.querySelector('#prev-group .sel')){showToast('請選擇是否曾參與有氧課程');return;}
+  showToast('基本資料已送出！');
+  setTimeout(()=>goScreen('home'),1200);
+}
+
+function saveJournal(){
+  const t1=document.getElementById('t1').value;
+  const t2=document.getElementById('t2').value;
+  const t3=document.getElementById('t3').value;
+  if(!t1&&!t2&&!t3){showToast('請至少填寫一件好事');return;}
+  const fb=document.getElementById('ai-feedback');
+  fb.style.display='block';
+  document.getElementById('ai-loading').style.display='flex';
+  document.getElementById('ai-result').style.display='none';
+  document.getElementById('save-btn').disabled=true;
+  setTimeout(()=>{
+    document.getElementById('ai-loading').style.display='none';
+    const r=document.getElementById('ai-result');
+    r.style.display='block';
+    r.textContent=aiFeedbacks[aiIdx%aiFeedbacks.length];
+    aiIdx++;
+    document.getElementById('save-btn').disabled=false;
+    showToast('日誌已儲存！連續書寫第 7 天');
+  },2000);
+}
+function submitScale(){showToast('量表已送出，感謝填答！');}
+
+const stepsData=[
+  {day:'一',steps:9200},{day:'二',steps:6800},{day:'三',steps:10500},
+  {day:'四',steps:5200},{day:'五',steps:8800},{day:'六',steps:11200},{day:'日',steps:4100},
+];
+function simulateUpload(){
+  const zone=document.getElementById('upload-zone');
+  zone.innerHTML='<i class="ti ti-loader" style="font-size:30px;color:var(--primary);display:block;margin-bottom:7px"></i><div class="uz-title">辨識中…</div><div class="uz-sub">請稍候</div>';
+  setTimeout(()=>{
+    zone.style.display='none';
+    const preview=document.getElementById('steps-preview');
+    preview.style.display='block';
+    const rows=document.getElementById('steps-rows');
+    rows.innerHTML='';
+    const max=Math.max(...stepsData.map(d=>d.steps));
+    stepsData.forEach(d=>{
+      const pct=Math.round(d.steps/max*100);
+      const ok=d.steps>=8000;
+      rows.innerHTML+=`<div class="steps-row"><span class="steps-day">${d.day}</span><div class="steps-bar-bg"><div class="steps-bar-fill" style="width:${pct}%"></div></div><span class="steps-count">${d.steps.toLocaleString()}</span><span class="steps-ok">${ok?'✓':''}</span></div>`;
+    });
+    showToast('截圖上傳成功！資料已傳送給研究者');
+  },1800);
+}
+
+const chiItems=[
+  {q:'生活如意程度',opts:['不如意','還算如意','相當如意','非常如意']},
+  {q:'快樂程度',opts:['不快樂','快樂','相當快樂','快樂得不得了']},
+  {q:'對未來樂觀程度',opts:['不樂觀','有些樂觀','樂觀','充滿希望']},
+  {q:'生活滿意度',opts:['無任何滿意','一些事滿意','大部分滿意','每件事滿意']},
+  {q:'活力程度',opts:['沒有活力','相當有活力','非常有活力','無窮活力']},
+];
+const cq=document.getElementById('chi-questions');
+chiItems.forEach((item,i)=>{
+  const w=document.createElement('div');
+  w.className='scale-q';
+  w.innerHTML=`<div class="sq-label">${i+1}. ${item.q}</div>`;
+  const row=document.createElement('div');
+  row.className='scale-opts';
+  item.opts.forEach((opt,j)=>{
+    const btn=document.createElement('button');
+    btn.className='sopt';btn.textContent=j;btn.title=opt;
+    btn.onclick=()=>{row.querySelectorAll('.sopt').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');};
+    row.appendChild(btn);
+  });
+  w.appendChild(row);
+  const ends=document.createElement('div');
+  ends.className='scale-ends';
+  ends.innerHTML=`<span>${item.opts[0]}</span><span>${item.opts[3]}</span>`;
+  w.appendChild(ends);
+  cq.appendChild(w);
+});
+
+function switchRTab(el,tid){
+  document.querySelectorAll('.rtab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.ptab-content').forEach(c=>c.classList.remove('active'));
+  document.getElementById(tid).classList.add('active');
+}
+
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.style.opacity='1';
+  clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.style.opacity='0',2300);
+}
+</script>
+
+
+</body></html>
